@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    background-color: #f8f8f8;
+    font-family: "Open Sans", verdana, arial, sans-serif;
+}
+
+h2 {
+    font-size: large;
+    font-weight: normal;
+    margin-left: 50px;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: 5px;
+    box-sizing: border-box
+}
+
+#left-pane {
+    flex: 1;
+    position: relative
+}
+
+#right-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 5px;
+    height: 100%
+}
+
+.DateInput, .DateInput_1 {
+    width: auto;
+}
+
+.DateInput_input, .DateInput_input_1 {
+    font-size: small;
+    text-align: center;
+    padding: 2px 4px;
+    background: #edf9ff;
+    width: 85px;
+}
+
+.rc-slider-mark-text, .rc-slider-mark-text-active {
+    white-space: nowrap;
+}
+
+/*
+.SingleDatePickerInput, .SingleDatePickerInput_1, .SingleDatePickerInput__withBorder, .SingleDatePickerInput__withBorder_2 {
+}
+*/
+

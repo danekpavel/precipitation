@@ -1,0 +1,14 @@
+/.idea
+/__pycache__
+
+logs.txt
+
+# old long format data
+/data/old-long
+
+# Vim swap files
+*.swp
+
+# Calc lock files
+*.xlsx#
+*.csv#

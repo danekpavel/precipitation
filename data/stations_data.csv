@@ -1,0 +1,425 @@
+js,precip_known,final,ID,X,Y,ELEVATION,NAME,FNAME,STATION_TYP
+Abertamy,Abertamy,Abertamy,L3ABER01,12.816447,50.367742,893.0,Abertamy,Abertamy,ASS
+Aš,Aš,Aš,L3AS0001,12.179572,50.220602,675.0,Aš,Aš,AKS1
+Bahno,Bahno,Bahno,H3BAHN01,15.234033,49.866846,420.0,Bahno,Bahno,ASS
+Bečov nad Teplou,Bečov nad Teplou,Bečov nad Teplou,L3BECO01,12.836679,50.0824,529.0,Bečov nad Teplou,Bečov nad Teplou,ASS
+Bedřichov,Bedřichov,Bedřichov,U2BEDR01,15.13708,50.81511,777.0,Bedřichov,Bedřichov,AKS1
+Bechyně,Bechyně,Bechyně,C2BECH01,14.469444,49.299444,409.0,Bechyně,Bechyně,ASS
+Bělá pod Pradědem. Červenohorské sedlo,"Bělá pod Pradědem, Červenohorské sedlo",Červenohorské sedlo,O1BECS01,17.154264,50.125009,1010.0,Bělá pod Pradědem,Bělá pod Pradědem. Červenohorské sedlo,ASS
+Bělotín,Bělotín,Bělotín,O1BELO01,17.8042,49.5869,306.0,Bělotín,Bělotín,AKS1
+Benešov,Benešov,Benešov,P3BENS01,14.69668,49.78862,343.0,Benešov,Benešov,ASS
+Bernartice,Bernartice,Bernartice,C1BERN01,14.389167,49.366111,485.0,Bernartice,Bernartice,ASS
+Bezvěrov,Bezvěrov,Bezvěrov,L2BEZV01,13.054363,49.993664,699.0,Bezvěrov,Bezvěrov,ASS
+Bílá. Konečná,"Bílá, Konečná","Bílá, Konečná",O1BILA01,18.5233,49.4547,720.0,Bílá,Bílá. Konečná,AKS2
+Bílý Potok. Smědava,"Bílý Potok, Smědava","Bílý Potok, Smědava",U2SMED01,15.27318,50.84452,834.0,Bílý Potok,Bílý Potok. Smědava,AKS4
+Bílý Újezd. Hroška,"Bílý Újezd, Hroška","Bílý Újezd, Hroška",H2BILU01,16.209938,50.234904,319.0,Bílý Újezd,Bílý Újezd. Hroška,ASS
+Bohumín. Záblatí,"Bohumín, Záblatí","Bohumín, Záblatí",O1BOHU01,18.3692,49.882,237.0,Bohumín,Bohumín. Záblatí,AKS2
+Bojkovice,Bojkovice,Bojkovice,B1BOJK01,17.81,49.0402,310.0,Bojkovice,Bojkovice,AKS3
+Borkovice,Borkovice,Borkovice,C2BORK01,14.636825,49.207925,419.0,Borkovice,Borkovice,AKS2
+Borohrádek,Borohrádek,Borohrádek,H2BORH01,16.086691,50.105254,254.0,Borohrádek,Borohrádek,AKS2
+Borová Lada,Borová Lada,Borová Lada,C1BLAD01,13.661958,48.99055,898.0,Borová Lada,Borová Lada,AKS3
+Borovno. Míšov,"Borovno, Míšov","Borovno, Míšov",L1BORO01,13.727867,49.623944,651.0,Borovno,Borovno. Míšov,ASS
+Boseň. Mužský,"Boseň, Mužský","Boseň, Mužský",P2BOSE01,15.0404,50.5222,382.0,Boseň,Boseň. Mužský,ASS
+Božanov,Božanov,Božanov,H3BOZN01,16.361634,50.525216,426.0,Božanov,Božanov,ASS
+Brandýs nad Labem-St.B,Brandýs nad Labem-St.B,Brandýs nad Labem-St.B,P2BRAN01,14.660559,50.189691,179.0,Brandýs nad Labem-St.B,Brandýs nad Labem-St.B,AKS1
+Branná. Františkov,"Branná, Františkov","Branná, Františkov",O2BRAN01,17.0129,50.1324,548.0,Branná,Branná. Františkov,ASS
+Brno. Tuřany,"Brno, Tuřany","Brno, Tuřany",B2BTUR01,16.688889,49.153056,241.0,Brno,Brno. Tuřany,AMS
+Brno. Žabovřesky,"Brno, Žabovřesky","Brno, Žabovřesky",B2BZAB01,16.5677,49.2165,236.0,Brno,Brno. Žabovřesky,AKS1
+Brod nad Dyjí,Brod nad Dyjí,Brod nad Dyjí,B2BROD01,16.5358,48.8733,177.0,Brod nad Dyjí,Brod nad Dyjí,AKS1
+Broumov,Broumov,Broumov,H3BROU01,16.343617,50.569966,373.0,Broumov,Broumov,AKS1
+Brtnice,Brtnice,Brtnice,B2BRTN01,15.6753,49.3069,517.0,Brtnice,Brtnice,ASS
+Březnice,Březnice,Březnice,C1BREZ01,13.9461,49.5542,493.0,Březnice,Březnice,ASS
+Bukovinka,Bukovinka,Bukovinka,B2BUKA01,16.798889,49.296944,511.0,Bukovinka,Bukovinka,ASS
+Byňov,Byňov,Byňov,C2BYNO01,14.799947,48.816603,475.0,Byňov,Byňov,AKS1
+Bystřice nad Pernštejnem,Bystřice nad Pernštejnem,Bystřice nad Pernštejnem,B2BYSP01,16.25401,49.52416,553.0,Bystřice nad Pernštejnem,Bystřice nad Pernštejnem,AKS1
+Bystřice pod Hostýnem,Bystřice pod Hostýnem,Bystřice pod Hostýnem,B1BYSH01,17.6706,49.3964,314.0,Bystřice pod Hostýnem,Bystřice pod Hostýnem,AKS2
+Čachrov,Čachrov,Čachrov,L1CACH01,13.301694,49.264136,729.0,Čachrov,Čachrov,ASS
+Čáslav. Nové město,"Čáslav, Nové město","Čáslav, Nové město",H3CASL01,15.3942797,49.901695,251.0,Čáslav,Čáslav. Nové město,AKS3
+Černá v Pošumaví,Černá v Pošumaví,Černá v Pošumaví,C1CERP01,14.1072,48.7356,740.0,Černá v Pošumaví,Černá v Pošumaví,AKS1
+Černovice. Dobešov,"Černovice, Dobešov","Černovice, Dobešov",C2CERN01,14.9625,49.3575,580.0,Černovice,Černovice. Dobešov,AKS2
+Černý Důl,Černý Důl,Černý Důl,H1CDUL01,15.712563,50.648678,715.0,Černý Důl,Černý Důl,ASS
+Červená,Červená,Červená,O1CERV01,17.541944,49.777222,748.13,Červená,Červená,AMS1
+Červená Voda,Červená Voda,Červená Voda,O2CERO01,16.742859,50.04034,535.0,Červená Voda,Červená Voda,ASS
+Česká Kubice,Česká Kubice,Česká Kubice,L1CKUB01,12.857804,49.367941,549.0,Česká Kubice,Česká Kubice,ASS
+Česká Lípa,Česká Lípa,Česká Lípa,U2CELI01,14.541141,50.675373,246.0,Česká Lípa,Česká Lípa,AKS2
+Česká Skalice. Rozkoš,"Česká Skalice, Rozkoš","Česká Skalice, Rozkoš",H1CSKL01,16.061111,50.363056,290.0,Česká Skalice,Česká Skalice. Rozkoš,AKS2
+České Budějovice.Rožnov,"České Budějovice,Rožnov","České Budějovice, Rožnov",C2CBUD01,14.469722,48.951944,394.6,České Budějovice,České Budějovice.Rožnov,AMS2
+České Meziříčí,České Meziříčí,České Meziříčí,H2CMEZ01,16.041312,50.282295,255.0,České Meziříčí,České Meziříčí,ASS
+Český Dub. Modlibohov,"Český Dub, Modlibohov","Český Dub, Modlibohov",P2CDUB01,14.981635,50.683677,355.0,Český Dub,Český Dub. Modlibohov,AKS4
+Český Krumlov. Přísečná,"Český Krumlov, Přísečná","Český Krumlov, Přísečná",C2CKRU01,14.33935,48.832242,554.0,Český Krumlov,Český Krumlov. Přísečná,AKS2
+Český Rudolec,Český Rudolec,Český Rudolec,B2CRUD01,15.322222,49.073333,520.0,Český Rudolec,Český Rudolec,ASS
+Děčín,Děčín,Děčín,U2DECI01,14.20258,50.75097,162.0,Děčín,Děčín,AKS2
+Děčín. Těchlovice,"Děčín, Těchlovice","Děčín, Těchlovice",U2DECT01,14.20433,50.69783,150.0,Děčín,Děčín. Těchlovice,ASS
+Desná. Souš,"Desná, Souš","Desná, Souš",P2DESN01,15.319286,50.789354,772.0,Desná,Desná. Souš,AKS1
+Deštné v Orlic. horách,Deštné v Orlic. horách,Deštné v Orlic. horách,H2DEST01,16.351959,50.306667,656.0,Deštné v Orlic. horách,Deštné v Orlic. horách,AKS1
+Dlouhé Stráně. Kouty nad Desnou,"Dlouhé Stráně, Kouty nad Desnou",Dlouhé Stráně,O2DSDN01,17.1794408,50.0854114,765.0,Dlouhé Stráně,Dlouhé Stráně. Kouty nad Desnou,ASS
+Dobřany,Dobřany,Dobřany,H2DOBN01,16.281744,50.322178,627.0,Dobřany,Dobřany,MSS
+Dobřichovice,Dobřichovice,Dobřichovice,P1DOBE01,14.27585,49.9335,205.0,Dobřichovice,Dobřichovice,AKS2
+Doksany,Doksany,Doksany,U1DOKS01,14.17,50.45889,158.0,Doksany,Doksany,AMS1
+Doksy,Doksy,Doksy,U2DOKY01,14.66731,50.56811,284.0,Doksy,Doksy,AKS1
+Dolní Bousov,Dolní Bousov,Dolní Bousov,P2DBOU01,15.141737,50.437897,244.0,Dolní Bousov,Dolní Bousov,AKS3
+Dolní Dvůr. Rudolfov,"Dolní Dvůr, Rudolfov","Dolní Dvůr, Rudolfov",H1DDVU01,15.655815,50.654592,560.0,Dolní Dvůr,Dolní Dvůr. Rudolfov,ASS
+Domažlice,Domažlice,Domažlice,L1DOMA01,12.922385,49.444716,458.0,Domažlice,Domažlice,AKS1
+Dřevohostice,Dřevohostice,Dřevohostice,B1DREV01,17.586111,49.424444,238.0,Dřevohostice,Dřevohostice,ASS
+Dubí,Dubí,Dubí,U1DUBI01,13.80214,50.68056,402.0,Dubí,Dubí,ASS
+Dubicko,Dubicko,Dubicko,O2DUBI01,16.9662,49.8269,282.0,Dubicko,Dubicko,AKS3
+Dukovany,Dukovany,Dukovany,B2DUKO01,16.134444,49.095556,400.15,Dukovany,Dukovany,AMS1
+Dvoračky,Dvoračky,Dvoračky,P2DVOR01,15.514525,50.748172,1115.0,Dvoračky,Dvoračky,AKS4
+Dyjákovice,Dyjákovice,Dyjákovice,B2DYJA01,16.2925,48.769,187.0,Dyjákovice,Dyjákovice,AKS1
+Dyleň,Dyleň,Dyleň,L2DYLE01,12.502849,49.968079,939.0,Dyleň,Dyleň,AKS2
+Dymokury,Dymokury,Dymokury,H3DYMO01,15.201165,50.248346,208.0,Dymokury,Dymokury,ASS
+Džbánice,Džbánice,Džbánice,B2DZBA01,16.2084664,49.0022497,337.0,Džbánice,Džbánice,ASS
+Filipova Huť,Filipova Huť,Filipova Huť,C1FILHTT,13.5192,49.0294,1112.0,Filipova Huť,Filipova Huť,TOTAL
+Frantoly,Frenštát pod Radhoštěm,Frenštát pod Radhoštěm,C1FRAN01,14.100278,48.9825,726.0,Frantoly,Frantoly,MSS
+Frýdek-Místek. Sviadnov,"Frýdek-Místek, Sviadnov","Frýdek-Místek, Sviadnov",O1FMSV01,18.32057,49.7012208,270.0,Frýdek-Místek,Frýdek-Místek. Sviadnov,AKS4
+Frýdlant,Frýdlant,Frýdlant,U2FRYD01,15.09015,50.91785,337.0,Frýdlant,Frýdlant,AKS
+Gajer. Janov,"Gajer, Janov","Gajer, Janov",H3GAJE01,16.406667,49.824722,510.0,Gajer,Gajer. Janov,AKS2
+Habry,Habry,Habry,P3HABR01,15.486748,49.751989,470.0,Habry,Habry,ASS
+Hanušovice,Hanušovice,Hanušovice,O2HANU01,16.940556,50.0819,432.0,Hanušovice,Hanušovice,AKS3
+Harrachov,Harrachov,Harrachov,P2HARR01,15.420036,50.781746,675.0,Harrachov,Harrachov,AKS1
+Havlíčkův Brod,Havlíčkův Brod,Havlíčkův Brod,P3HAVL01,15.579696,49.61188,452.0,Havlíčkův Brod,Havlíčkův Brod,AKS1
+Hejnice,Hejnice,Hejnice,U2HEJN01,15.18317,50.88456,396.0,Hejnice,Hejnice,AKS2
+Heřmanov,Heřmanov,Heřmanov,L2HERM01,13.57133,50.148529,407.0,Heřmanov,Heřmanov,AKS2
+Heřmanův Městec,Heřmanův Městec,Heřmanův Městec,H3HERM01,15.673986,49.946639,275.0,Heřmanův Městec,Heřmanův Městec,ASS
+Hladké Životice,Hladké Životice,Hladké Životice,O1HZIV01,17.949444,49.690556,256.0,Hladké Životice,Hladké Životice,AKS
+Hlasivo,Hlasivo,Hlasivo,C2HLAS01,14.7561,49.4981,547.0,Hlasivo,Hlasivo,AKS2
+Hluboká nad Vltavou,Hluboká nad Vltavou,Hluboká nad Vltavou,C1HLUB01,14.4356,49.0542,410.0,Hluboká nad Vltavou,Hluboká nad Vltavou,ASS
+Hluk,Hluk,Hluk,B1HLUK01,17.538,48.9863,225.0,Hluk,Hluk,ASS
+Hojsova Stráž,Hojsova Stráž,Hojsova Stráž,L1HOJS01,13.197146,49.212473,866.0,Hojsova Stráž,Hojsova Stráž,AKS2
+Holenice,Holenice,Holenice,P2HOLE01,15.302136,50.53026,423.0,Holenice,Holenice,AKS1
+Holešov,Holešov,Holešov,B1HOLE01,17.57,49.320556,222.25,Holešov,Holešov,AMS1
+Holovousy,Holovousy,Holovousy,H3HOLO01,15.5810108,50.375735,321.0,Holovousy,Holovousy,AKS1
+Horní Bečva,Horní Bečva,Horní Bečva,O3BECV01,18.2983,49.4311,565.0,Horní Bečva,Horní Bečva,AKS4
+Horní Lhota,Horní Lhota,Horní Lhota,B1HLHO01,17.8033,49.155,348.0,Horní Lhota,Horní Lhota,ASS
+Horní Lomná,Horní Lomná,Horní Lomná,O1HOLO01,18.637779,49.534088,582.0,Horní Lomná,Horní Lomná,AKS3
+Horní Maršov,Horní Maršov,Horní Maršov,H1HMAR01,15.818973,50.654577,585.0,Horní Maršov,Horní Maršov,ASS
+Horská Kvilda,"Horská Kvilda, u Hamerského potoka",Horská Kvilda,C1HKVI01,13.56502,49.053673,1052.0,Horská Kvilda,Horská Kvilda,AKS3
+Horšovský Týn,Horšovský Týn,Horšovský Týn,L1HTYN01,12.943746,49.528213,374.0,Horšovský Týn,Horšovský Týn,ASS
+Hostinné,Hostinné,Hostinné,H1HOST01,15.7201375,50.5400231,351.0,Hostinné,Hostinné,ASS
+Hošťálková,Hošťálková,Hošťálková,O3HOST01,17.8683,49.3514,385.0,Hošťálková,Hošťálková,AKS4
+Hošťálková. Maruška,"Hošťálková, Maruška","Hošťálková, Maruška",O3MARU01,17.8286,49.3653,664.1,Hošťálková,Hošťálková. Maruška,AKS2
+Hoštejn,Hoštejn,Hoštejn,O2HOSJ01,16.7688722,49.875125,305.0,Hoštejn,Hoštejn,ASS
+Hradec Králové. Nový Hradec Králové,"Hradec Králové, Nový Hradec Králové",Nový Hradec Králové,H3HRAD01,15.838452,50.177649,278.0,Hradec Králové,Hradec Králové. Nový Hradec Králové,AKS1
+Hradec Králové. Svobodné Dvory,"Hradec Králové, Svobodné Dvory","Hradec Králové, Svobodné Dvory",H3SVOD01,15.787757,50.223004,240.0,Hradec Králové,Hradec Králové. Svobodné Dvory,AKS1
+Hradec nad Svitavou,Hradec nad Svitavou,Hradec nad Svitavou,B2HRAS01,16.4875,49.7311,446.0,Hradec nad Svitavou,Hradec nad Svitavou,ASS
+Hrob. Křižanov,"Hrob, Křižanov","Hrob, Křižanov",U1HROB01,13.71953,50.654,360.0,Hrob,Hrob. Křižanov,ASS
+Hrochův Týnec,Hrochův Týnec,Hrochův Týnec,H3HRTY01,15.909774,49.962057,241.0,Hrochův Týnec,Hrochův Týnec,ASS
+Hrušová,Hrušová,Hrušová,H3HRUS01,16.19522,49.916667,291.0,Hrušová,Hrušová,AKS1
+Hřivice,Hřivice,Hřivice,U1HRIV01,13.732,50.292153,270.0,Hřivice,Hřivice,ASS
+Hubenov,Hubenov,Hubenov,B2HUBE01,15.4669,49.3931,570.0,Hubenov,Hubenov,AKS1
+Hudlice,Hudlice,Hudlice,P1HUDL01,13.96477,49.96121,449.0,Hudlice,Hudlice,ASS
+Hulice,Hulice,Hulice,P3HULI01,15.086667,49.721111,375.0,Hulice,Hulice,AKS4
+Humpolec,Humpolec,Humpolec,P3HUMP02,15.353256,49.535216,540.0,Humpolec,Humpolec,ASS
+Husinec,Husinec,Husinec,C1HUSI01,13.9883,49.0522,483.0,Husinec,Husinec,AKS1
+Huslenky. Kychová,"Huslenky, Kychová","Huslenky, Kychová",O3HUSL01,18.1261,49.3,450.0,Huslenky,Huslenky. Kychová,ASS
+Hvozdec. Mrtník,"Hvozdec, Mrtník","Hvozdec, Mrtník",P1HVOZ01,13.872083,49.798186,425.0,Hvozdec,Hvozdec. Mrtník,ASS
+Chanovice,Chanovice,Chanovice,C1CHAN01,13.7194,49.4019,533.0,Chanovice,Chanovice,ASS
+Cheb,Cheb,Cheb,L3CHEB01,12.391389,50.068333,483.0,Cheb,Cheb,AMS1
+Chelčice,Chelčice,Chelčice,C1CHEL01,14.169367,49.119265,451.0,Chelčice,Chelčice,ASS
+Chlum u Třeboně,Chlum u Třeboně,Chlum u Třeboně,C2CHLT01,14.935278,48.958056,462.0,Chlum u Třeboně,Chlum u Třeboně,ASS
+Choceň,Choceň,Choceň,H2CHOC01,16.200903,50.009544,282.0,Choceň,Choceň,ASS
+Chotusice. letiště,"Chotusice, letiště","Chotusice, letiště",H3CHTU01,15.386389,49.940833,238.2,Chotusice,Chotusice. letiště,AMS
+Chotyně,Chotyně,Chotyně,U2CHOT01,14.87175,50.83897,260.0,Chotyně,Chotyně,ASS
+Chrastava,Chrastava,Chrastava,U2CHRV01,14.95861,50.81872,314.0,Chrastava,Chrastava,ASS
+Chudenice,Chudenice,Chudenice,L1CHUD01,13.176262,49.465405,490.0,Chudenice,Chudenice,ASS
+Chuchelná,Chuchelná,Chuchelná,O1CHLN01,18.119769,49.991679,258.0,Chuchelná,Chuchelná,AKS4
+Churáňov,Churáňov,Churáňov,C1CHUR01,13.615278,49.068333,1117.8,Churáňov,Churáňov,AMS1
+Ivanovice na Hané,Ivanovice na Hané,Ivanovice na Hané,B1IVAN01,17.0894,49.3092,243.0,Ivanovice na Hané,Ivanovice na Hané,AKS2
+Jablonec nad Nisou,Jablonec nad Nisou,Jablonec nad Nisou,U2JANI01,15.17959,50.72922,495.0,Jablonec nad Nisou,Jablonec nad Nisou,ASS
+Jablonné v Podještědí,Jablonné v Podještědí,Jablonné v Podještědí,U2JAPO01,14.77375,50.77206,320.0,Jablonné v Podještědí,Jablonné v Podještědí,AKS2
+Jaroslavice,"Jablunkov, Návsí","Jablunkov, Návsí",B2JARS01,16.2325,48.7553,190.0,Jaroslavice,Jaroslavice,MSS
+Javorník,Javorník,Javorník,O1JAVO01,17.0075,50.3956,284.0,Javorník,Javorník,AKS1
+Jelení. Nová Pec,"Jelení, Nová Pec","Jelení, Nová Pec",C1JELE01,13.8897,48.8031,810.0,Jelení,Jelení. Nová Pec,ASS
+Jemnice,Jemnice,Jemnice,B2JEMN01,15.59,49.025,502.0,Jemnice,Jemnice,ASS
+Jeseník,Jeseník,Jeseník,O1JESE01,17.183333,50.231111,502.0,Jeseník,Jeseník,AKS2
+Jevíčko,Jevíčko,Jevíčko,O2JEVI01,16.7055,49.6309,362.0,Jevíčko,Jevíčko,AKS4
+Jičín,Jičín,Jičín,H3JICI01,15.352626,50.439511,283.0,Jičín,Jičín,AKS1
+Jihlava. Hruškové Dvory,"Jihlava, Hruškové Dvory","Jihlava, Hruškové Dvory",B2JIHL01,15.6164,49.4064,468.0,Jihlava,Jihlava. Hruškové Dvory,AKS3
+Jindřichův Hradec. Děbolín,"Jindřichův Hradec, Děbolín","Jindřichův Hradec, Děbolín",C2JHRA01,14.9575,49.1556,524.0,Jindřichův Hradec,Jindřichův Hradec. Děbolín,AKS1
+Josefův Důl,Josefův Důl,Josefův Důl,P2JDUL01,15.22859,50.778185,623.0,Josefův Důl,Josefův Důl,ASS
+Kadov,Kadov,Kadov,B2KADO01,16.07777778,49.6351314,672.0,Kadov,Kadov,ASS
+Kamenice nad Lipou. Vodná,"Kamenice nad Lipou, Vodná","Kamenice nad Lipou, Vodná",C2KAML01,15.0633,49.2831,557.0,Kamenice nad Lipou,Kamenice nad Lipou. Vodná,ASS
+Kamýk nad Vltavou,Kamýk nad Vltavou,Kamýk nad Vltavou,P1KAMY01,14.24637,49.63234,280.0,Kamýk nad Vltavou,Kamýk nad Vltavou,ASS
+Káraný,Káraný,Káraný,P2NVES01,14.731428,50.175931,170.0,Káraný,Káraný,ASS
+Karlova Studánka,Karlova Studánka,Karlova Studánka,O1KAST01,17.306832,50.074053,795.0,Karlova Studánka,Karlova Studánka,AKS3
+Karlova Ves,Karlova Ves,Karlova Ves,L2KVES01,13.861277,49.990212,405.0,Karlova Ves,Karlova Ves,ASS
+Karlovice,Karlovice,Karlovice,O1KARL01,17.4510033,50.0936408,467.0,Karlovice,Karlovice,ASS
+Karlovy Vary,Karlovy Vary,Karlovy Vary,L3KVAZ01,12.878151,50.227229,377.0,Karlovy Vary,Karlovy Vary,AKS4
+Karlovy Vary. Olšová Vrata,"Karlovy Vary, Olšová Vrata","Karlovy Vary, Olšová Vrata",L3KVAL01,12.914167,50.201667,603.0,Karlovy Vary,Karlovy Vary. Olšová Vrata,AMS
+Karviná,Karviná,Karviná,O1KARV01,18.5332,49.8549,224.0,Karviná,Karviná,AKS2
+Kašperské Hory,Kašperské Hory,Kašperské Hory,C1KHOR01,13.55,49.145556,728.0,Kašperské Hory,Kašperské Hory,AKS
+Kateřinice. Ojičná,"Kateřinice, Ojičná","Kateřinice, Ojičná",O3KATE01,17.873311,49.400762,585.0,Kateřinice,Kateřinice. Ojičná,AKS
+Katusice,Katusice,Katusice,P2KATU01,14.779398,50.444653,312.0,Katusice,Katusice,AKS2
+Kestřany,Kestřany,Kestřany,C1KEST01,14.0736,49.2681,381.0,Kestřany,Kestřany,ASS
+Klatovy,Klatovy,Klatovy,L1KLAT01,13.303016,49.39042,421.0,Klatovy,Klatovy,AKS1
+Klínovec,Klínovec,Klínovec,L3KLIN01,12.967957,50.3948,1236.0,Klínovec,Klínovec,AKS2
+Klíny,Klíny,Klíny,U1KLIN01,13.55153,50.63875,807.0,Klíny,Klíny,ASS
+Kobylí,Kobylí,Kobylí,B2KOBY01,16.8814,48.9394,175.0,Kobylí,Kobylí,AKS1
+Kocelovice,Kocelovice,Kocelovice,C1KOCE01,13.838611,49.467222,519.0,Kocelovice,Kocelovice,AMS1
+Kojetín,Kojetín,Kojetín,B1KOJE01,17.2944,49.3527,203.0,Kojetín,Kojetín,ASS
+Konárovice,Konárovice,Konárovice,H3KONA01,15.284988,50.03844,209.0,Konárovice,Konárovice,ASS
+Konstantinovy Lázně,Konstantinovy Lázně,Konstantinovy Lázně,L2KONL01,12.975956,49.884787,530.0,Konstantinovy Lázně,Konstantinovy Lázně,AKS1
+Kopisty,Kopisty,Kopisty,U1KOPI01,13.62278,50.54417,240.0,Kopisty,Kopisty,AMS1
+Kořenov. Jizerská cesta,"Kořenov, Jizerská cesta","Kořenov, Jizerská cesta",P4KJIC01,15.304489,50.840495,920.0,Kořenov,Kořenov. Jizerská cesta,ASS
+Kostelní Myslová,Kostelní Myslová,Kostelní Myslová,B2KMYS01,15.439167,49.159167,569.0,Kostelní Myslová,Kostelní Myslová,AMS1
+Kostomlaty nad Labem,Kostomlaty nad Labem,Kostomlaty nad Labem,P2KOST01,14.961299,50.181641,185.0,Kostomlaty nad Labem,Kostomlaty nad Labem,ASS
+Košetice. Křešín. Kramolín,"Košetice, Křešín, Kramolín","Košetice, Křešín, Kramolín",P3KOSE01,15.08046,49.573504,532.29,Košetice,Košetice. Křešín. Kramolín,AMS1
+Kounov,Kounov,Kounov,L2KOUN01,13.672193,50.214902,418.0,Kounov,Kounov,ASS
+Králíky,Králíky,Králíky,H2KRAL01,16.73475,50.08289,538.0,Králíky,Králíky,AKS1
+Kralovice,Kralovice,Kralovice,L2KRAL01,13.494007,49.981823,449.0,Kralovice,Kralovice,AKS1
+Kralupy nad Vltavou,Kralupy nad Vltavou,Kralupy nad Vltavou,P1KRAL01,14.289786,50.241923,220.0,Kralupy nad Vltavou,Kralupy nad Vltavou,AKS2
+Krásné Údolí,Krásné Údolí,Krásné Údolí,L2KRAU01,12.920958,50.071286,650.0,Krásné Údolí,Krásné Údolí,AKS1
+Krnov,Krnov,Krnov,O1KRNO01,17.6922,50.078,360.0,Krnov,Krnov,AKS2
+Kroměříž,Kroměříž,Kroměříž,B1KROM01,17.3653,49.2847,233.0,Kroměříž,Kroměříž,AKS1
+Krsice,Krsice,Krsice,C1KRSI01,14.0725,49.484444,430.0,Krsice,Krsice,ASS
+Krucemburk,Krucemburk,Krucemburk,H3KRUC01,15.844811,49.688077,559.0,Krucemburk,Krucemburk,ASS
+Křemže. Mříč,"Křemže, Mříč","Křemže, Mříč",C2KREM01,14.3028,48.9064,524.0,Křemže,Křemže. Mříč,AKS3
+Křižany,Křižany,Křižany,U2KRIN01,14.907056,50.738722,395.0,Křižany,Křižany,ASS
+Ktiš. Tisovka,"Ktiš, Tisovka","Ktiš, Tisovka",C1KTIS01,14.1058,48.9033,758.0,Ktiš,Ktiš. Tisovka,AKS2
+Kubova Huť,Kubova Huť,Kubova Huť,C1KHUT01,13.771537,48.986168,997.0,Kubova Huť,Kubova Huť,AKS3
+Kuchařovice,Kuchařovice,Kuchařovice,B2KUCH01,16.085278,48.881111,334.0,Kuchařovice,Kuchařovice,AMS1
+Kynžvart. Lazy,"Kynžvart, Lazy","Kynžvart, Lazy",L3LAZY01,12.62322,50.05,845.0,Kynžvart,Kynžvart. Lazy,ASS
+Labská bouda,Labská bouda,Labská bouda,H1LBOU01,15.544927,50.769883,1320.0,Labská bouda,Labská bouda,AKS2
+Lanškroun,Lanškroun,Lanškroun,O2LANS01,16.625,49.9028,362.0,Lanškroun,Lanškroun,AKS4
+Lány,Lány,Lány,P1LANY01,13.952337,50.124148,415.0,Lány,Lány,AKS1
+Lázně Bělohrad,Lázně Bělohrad,Lázně Bělohrad,H3LBEL01,15.588567,50.427437,299.0,Lázně Bělohrad,Lázně Bělohrad,AKS2
+Lednice,Lednice,Lednice,B2LEDN01,16.798895,48.792616,177.0,Lednice,Lednice,AKS2
+Libáň,Libáň,Libáň,H3LIBA01,15.214447,50.370822,240.0,Libáň,Libáň,ASS
+Liberec,Liberec,Liberec,U2LIBC01,15.02389,50.76972,397.72,Liberec,Liberec,AMS1
+Libice nad Doubravou,Libice nad Doubravou,Libice nad Doubravou,H3LIBC01,15.704862,49.744164,425.0,Libice nad Doubravou,Libice nad Doubravou,AKS2
+Liblín,Liblín,Liblín,L2LIBL01,13.5451,49.916487,299.0,Liblín,Liblín,ASS
+Libochovice. Poplze,"Libochovice, Poplze","Libochovice, Poplze",U1LIBO01,14.04575,50.39983,165.0,Libochovice,Libochovice. Poplze,ASS
+Lichnov,Lichnov,Lichnov,O1LICH01,17.633611,50.011111,389.0,Lichnov,Lichnov,ASS
+Lobendava,Lobendava,Lobendava,U2LOBE01,14.31347,51.01965,350.0,Lobendava,Lobendava,ASS
+Lomnice,Lomnice,Lomnice,O1LORY01,17.41431,49.8691,594.0,Lomnice,Lomnice,ASS
+Lomnice nad Popelkou,Lomnice nad Popelkou,Lomnice nad Popelkou,P2LOMN01,15.379375,50.538491,485.0,Lomnice nad Popelkou,Lomnice nad Popelkou,ASS
+Lovčice. Kvasetice,"Lovčice, Kvasetice","Lovčice, Kvasetice",L1LOVC01,13.493545,49.402384,597.0,Lovčice,Lovčice. Kvasetice,ASS
+Lubná,Lubná,Lubná,H3LUBN01,16.190554,49.773006,560.0,Lubná,Lubná,ASS
+Luby,Luby,Luby,L3LUBY01,12.400238,50.256881,524.0,Luby,Luby,ASS
+Lučina,Lučina,Lučina,O1LUCI01,18.4425,49.7308,300.0,Lučina,Lučina,AKS2
+Luční bouda,Luční bouda,Luční bouda,H1LUCB01,15.697859,50.735318,1413.0,Luční bouda,Luční bouda,AKS1
+Luhačovice. Kladná-Žilín,"Luhačovice, Kladná-Žilín","Luhačovice, Kladná-Žilín",B1KLZI01,17.7925,49.0842,329.0,Luhačovice,Luhačovice. Kladná-Žilín,AKS2
+Luisino údolí. Deštné v Orlických horách,"Luisino údolí, Deštné v Orlických horách",Luisino údolí,H2LUIS01,16.38829,50.287003,875.0,Luisino údolí,Luisino údolí. Deštné v Orlických horách,ASS
+Luká,Luká,Luká,O2LUKA01,16.953333,49.652222,510.0,Luká,Luká,AMS1
+Lysá hora,Lysá hora,Lysá hora,O1LYSA01,18.4475,49.546111,1322.03,Lysá hora,Lysá hora,AMS1
+Mariánské Lázně. vodárna,"Mariánské Lázně, vodárna","Mariánské Lázně, vodárna",L2MLAV01,12.695966,49.990619,696.0,Mariánské Lázně,Mariánské Lázně. vodárna,AKS1
+Mařenice,Mařenice,Mařenice,U2MARE01,14.676,50.80967,395.0,Mařenice,Mařenice,ASS
+Mašťov,Mašťov,Mašťov,U1MAST01,13.2828,50.2608,373.0,Mašťov,Mašťov,ASS
+Měděnec,Měděnec,Měděnec,U1MEDE01,13.13256,50.42936,828.0,Měděnec,Měděnec,AKS1
+Měrunice. Žichov,"Měrunice, Žichov","Měrunice, Žichov",U1MERU01,13.79031,50.47908,367.0,Měrunice,Měrunice. Žichov,ASS
+Město Albrechtice. Žáry,"Město Albrechtice, Žáry","Město Albrechtice, Žáry",O1ZARY01,17.560556,50.154167,498.0,Město Albrechtice,Město Albrechtice. Žáry,AKS4
+Milešov,Milešov,Milešov,U1MILS01,13.94231,50.53642,348.0,Milešov,Milešov,ASS
+Milešovka,Milešovka,Milešovka,U1MILE01,13.93083,50.555,830.5,Milešovka,Milešovka,AMS
+Mimoň,Mimoň,Mimoň,U2MIMO01,14.72494,50.65975,278.0,Mimoň,Mimoň,ASS
+Mladá Vožice,Mladá Vožice,Mladá Vožice,P3MLVO01,14.808259,49.537459,435.0,Mladá Vožice,Mladá Vožice,ASS
+Mokošín,Mokošín,Mokošín,H3MOKO01,15.56668,50.016395,255.0,Mokošín,Mokošín,AKS1
+Moravské Budějovice,Moravské Budějovice,Moravské Budějovice,B2MBUD01,15.8067,49.0611,460.0,Moravské Budějovice,Moravské Budějovice,AKS2
+Mořkov,Mořkov,Mořkov,O1MORK01,18.057778,49.5414,345.0,Mořkov,Mořkov,AKS3
+Mošnov,Mošnov,Mošnov,O1MOSN01,18.112778,49.691944,252.8,Mošnov,Mošnov,AMS
+Mrzky,Mrzky,Mrzky,P2MRZK01,14.80731,50.044659,260.0,Mrzky,Mrzky,AKS4
+Mšeno,Mšeno,Mšeno,P2MSEN01,14.63399,50.44061,340.0,Mšeno,Mšeno,ASS
+Nadějkov. Větrov,"Nadějkov, Větrov","Nadějkov, Větrov",C2NADV01,14.4653,49.5169,616.0,Nadějkov,Nadějkov. Větrov,AKS1
+Nalžovské Hory,Nalžovské Hory,Nalžovské Hory,C1NALH01,13.5486,49.3347,495.0,Nalžovské Hory,Nalžovské Hory,ASS
+Náměšť nad Oslavou,Náměšť nad Oslavou,Náměšť nad Oslavou,B2NAMO01,16.144155,49.2101581,390.0,Náměšť nad Oslavou,Náměšť nad Oslavou,ASS
+Nedrahovice. Rudolec,"Nedrahovice, Rudolec","Nedrahovice, Rudolec",P3NRUD01,14.440088,49.631723,348.0,Nedrahovice,Nedrahovice. Rudolec,AKS1
+Nedvězí,Nedvězí,Nedvězí,B2NEDV01,16.3097,49.6344,722.0,Nedvězí,Nedvězí,AKS1
+Nejdek,Nejdek,Nejdek,L3NEJD01,12.715486,50.335684,609.0,Nejdek,Nejdek,AKS3
+Nemochovice,Nemochovice,Nemochovice,B2NEMO01,17.1361,49.1808,283.0,Nemochovice,Nemochovice,AKS2
+Nepomuk,Nepomuk,Nepomuk,L1NEPO01,13.589389,49.486924,471.0,Nepomuk,Nepomuk,AKS1
+Netřebice,Netřebice,Netřebice,C2NETR01,14.4561,48.7931,616.0,Netřebice,Netřebice,ASS
+Netvořice,Netvořice,Netvořice,P3NETV01,14.521178,49.818411,365.0,Netvořice,Netvořice,AKS4
+Neumětely,Neumětely,Neumětely,P1NEUM01,14.037548,49.854272,322.0,Neumětely,Neumětely,AKS1
+Nezvěstice,Nezvěstice,Nezvěstice,L1NEZV01,13.528521,49.635765,371.0,Nezvěstice,Nezvěstice,ASS
+Nová Bystřice,Nová Bystřice,Nová Bystřice,C2NBYS01,15.1,49.0189,583.0,Nová Bystřice,Nová Bystřice,ASS
+Nová Ves,Nová Ves,Nová Ves,B2NOVE01,15.7869,49.2547,422.0,Nová Ves,Nová Ves,ASS
+Nová Ves v Horách,Nová Ves v Horách,Nová Ves v Horách,U1NOVE01,13.48561,50.59244,725.0,Nová Ves v Horách,Nová Ves v Horách,AKS1
+Nové Heřminovy,Nové Heřminovy,Nové Heřminovy,O1NHER01,17.558457,50.037435,395.0,Nové Heřminovy,Nové Heřminovy,AKS
+Nové Hrady,Nové Hrady,Nové Hrady,H3NHRA01,16.1475,49.850201,400.0,Nové Hrady,Nové Hrady,ASS
+Nové Město na Moravě,Nové Město na Moravě,Nové Město na Moravě,B2NMES01,16.0689,49.5581,601.0,Nové Město na Moravě,Nové Město na Moravě,ASS
+Nové Město pod Smrkem,Nové Město pod Smrkem,Nové Město pod Smrkem,U2NMES01,15.23381,50.92358,473.0,Nové Město pod Smrkem,Nové Město pod Smrkem,ASS
+Nový Bor,Nový Bor,Nový Bor,U2NBOR01,14.55719,50.75,358.0,Nový Bor,Nový Bor,ASS
+Nový Bydžov,Nový Bydžov,Nový Bydžov,H3NBYD01,15.497443,50.237553,232.0,Nový Bydžov,Nový Bydžov,AKS2
+Nový Rychnov,Nový Rychnov,Nový Rychnov,P3NRYC01,15.365095,49.385922,619.0,Nový Rychnov,Nový Rychnov,AKS1
+Nýdek. Filipka,"Nýdek, Filipka","Nýdek, Filipka",O1NYFI01,18.788599,49.616676,745.0,Nýdek,Nýdek. Filipka,AKS4
+Obora,Obora,Obora,B2OBOR01,16.603611,49.451667,425.0,Obora,Obora,ASS
+Olešnice,Olešnice,Olešnice,B2OLES01,16.4166,49.5586,543.0,Olešnice,Olešnice,ASS
+Olešnice. Čihálka,"Olešnice, Čihálka","Olešnice, Čihálka",H2OLES01,16.352829,50.374902,740.0,Olešnice,Olešnice. Čihálka,ASS
+Olomouc. Holice,"Olomouc, Holice","Olomouc, Holice",O2OLOM01,17.2844,49.5758,210.0,Olomouc,Olomouc. Holice,AKS2
+Olší,Olší,Olší,C2OLSI01,14.51,49.436389,495.0,Olší,Olší,ASS
+Ondřejov,Ondřejov,Ondřejov,P3ONDR01,14.784964,49.906761,491.0,Ondřejov,Ondřejov,AKS1
+Opava,Opava,Opava,O1OPAV01,17.878541,49.928847,268.0,Opava,Opava,AKS2
+Orlické Záhoří,Orlické Záhoří - vodárna,Orlické Záhoří - vodárna,H2ORLZ01,16.468455,50.280707,690.0,Orlické Záhoří,Orlické Záhoří,MSS
+Orličky,Orličky,Orličky,H2ORLI01,16.667424,50.026453,570.0,Orličky,Orličky,ASS
+Orlík nad Vltavou,Orlík nad Vltavou,Orlík nad Vltavou,C1ORLV01,14.1683,49.5036,431.0,Orlík nad Vltavou,Orlík nad Vltavou,ASS
+Oskava,Oskava,Oskava,O2OSKA01,17.134781,49.90482,360.0,Oskava,Oskava,ASS
+Osoblaha,Osoblaha,Osoblaha,O1OSOB01,17.7135,50.2709,238.0,Osoblaha,Osoblaha,AKS4
+Ostrava. Poruba,"Ostrava, Poruba","Ostrava, Poruba",O1PORU01,18.15942,49.825331,240.0,Ostrava,Ostrava. Poruba,AKS1
+Ostrava. Slezská Ostrava,"Ostrava, Slezská Ostrava","Ostrava, Slezská Ostrava",O1OSLZ01,18.317553,49.844977,269.0,Ostrava,Ostrava. Slezská Ostrava,AKS4
+Pacov,Pacov,Pacov,P3PACO01,15.02348,49.46355,494.0,Pacov,Pacov,ASS
+Pardubice. letiště,"Pardubice, letiště","Pardubice, letiště",H3PARD01,15.740273,50.016111,224.21,Pardubice,Pardubice. letiště,AMS
+Paseka,Paseka,Paseka,O2PASE01,17.2345,49.7776,271.0,Paseka,Paseka,AKS4
+Paseky,Paseky,Paseky,C1PASE01,14.2678,49.2497,482.0,Paseky,Paseky,ASS
+Pec pod Sněžkou,Pec pod Sněžkou,Pec pod Sněžkou,H1PECS01,15.728889,50.691944,816.3,Pec pod Sněžkou,Pec pod Sněžkou,AMS1
+Petrovice. Krásný Les,"Petrovice, Krásný Les","Petrovice, Krásný Les",U1PEKL01,13.937667,50.767361,631.0,Petrovice,Petrovice. Krásný Les,ASS
+Pivoň,Pivoň,Pivoň,L1PIVO01,12.741932,49.490754,619.0,Pivoň,Pivoň,ASS
+Planá,Planá,Planá,L2PLAN01,12.735097,49.870952,505.0,Planá,Planá,ASS
+Plechý. Trojmezí,Plechý,Plechý,C1PLCHTT,13.851601,48.771198,1344.0,Plechý,Plechý. Trojmezí,TOTAL
+Plzeň. Bolevec,"Plzeň, Bolevec","Plzeň, Bolevec",L1PLZB01,13.386411,49.788378,331.0,Plzeň,Plzeň. Bolevec,AKS1
+Plzeň. Mikulka,"Plzeň, Mikulka","Plzeň, Mikulka",L1PLMI01,13.378889,49.764722,359.8,Plzeň,Plzeň. Mikulka,AMS1
+Počátky,Počátky,Počátky,C2POCA01,15.2342,49.2606,618.0,Počátky,Počátky,AKS2
+Poděbrady,Poděbrady,Poděbrady,H3PODE01,15.133554,50.140503,189.0,Poděbrady,Poděbrady,AKS1
+Podivice,Podivice,Podivice,B1PODI01,17.003611,49.369444,375.0,Podivice,Podivice,ASS
+Pohorská Ves,Pohorská Ves,Pohorská Ves,C2PVES01,14.649167,48.670278,773.0,Pohorská Ves,Pohorská Ves,ASS
+Pohořelice,Pohořelice,Pohořelice,B2POHO01,16.5283,48.9844,180.0,Pohořelice,Pohořelice,AKS1
+Police nad Metují,Police nad Metují,Police nad Metují,H1POLI01,16.237511,50.537805,446.0,Police nad Metují,Police nad Metují,ASS
+Polička,Polička,Polička,B2POLI01,16.269167,49.716111,552.0,Polička,Polička,ASS
+Pomezní boudy. Horní Malá Úpa,"Pomezní boudy, Horní Malá Úpa",Pomezní boudy,H1POMB01,15.82027,50.745472,1050.0,Pomezní boudy,Pomezní boudy. Horní Malá Úpa,ASS
+Potštát. Boškov,"Potštát, Boškov","Potštát, Boškov",O3POTB01,17.6142,49.6238,545.0,Potštát,Potštát. Boškov,AKS4
+Praha. Břevnov,"Praha, Břevnov","Praha, Břevnov",P1PBRE01,14.352689,50.080843,355.0,Praha,Praha. Břevnov,ASS
+Praha. Chodov,"Praha, Chodov (PVS)","Praha, Chodov",P1PCHO01,14.5,50.0294,297.0,Praha,Praha. Chodov,MSS
+Praha. Karlov,"Praha, Karlov","Praha, Karlov",P1PKAR01,14.427778,50.069167,260.5,Praha,Praha. Karlov,AMS1
+Praha. Kbely,"Praha, Kbely","Praha, Kbely",P1PKBE01,14.538056,50.123333,284.5,Praha,Praha. Kbely,AMS
+Praha. Klementinum,"Praha, Klementinum","Praha, Klementinum",P1PKLE01,14.416923,50.086634,190.7,Praha,Praha. Klementinum,AKS4
+Praha. Komořany,"Praha, Komořany","Praha, Komořany",P1PKOM01,14.40636,49.9886,213.0,Praha,Praha. Komořany,AKS4
+Praha. Libuš,"Praha, Libuš","Praha, Libuš",P1PLIB01,14.446944,50.007778,302.04,Praha,Praha. Libuš,AMS1
+Praha. Ruzyně,"Praha, Ruzyně","Praha, Ruzyně",P1PRUZ01,14.255556,50.100278,364.0,Praha,Praha. Ruzyně,AMS
+Praha. Vinohrady - Flora,"Praha, Vinohrady - Flora","Praha, Vinohrady - Flora",P1PVIN01,14.46186,50.07584,280.0,Praha,Praha. Vinohrady - Flora,AKS2
+Prostějov,Prostějov,Prostějov,B1PROS01,17.134722,49.4525,214.75,Prostějov,Prostějov,AMS
+Protivanov,Protivanov,Protivanov,B1PROT01,16.83105,49.47782,675.0,Protivanov,Protivanov,AKS1
+Průhonice,Průhonice,Průhonice,P1PRUH01,14.561121,50.007829,312.0,Průhonice,Průhonice,AKS4
+Přebuz,Přebuz,Přebuz,L3PREB01,12.615467,50.37246,904.0,Přebuz,Přebuz,AKS4
+Přerov,Přerov,Přerov,O3PRER01,17.458889,49.464444,210.0,Přerov,Přerov,AKS4
+Příbram,Příbram,Příbram,P1PRIB01,14.022433,49.694602,555.0,Příbram,Příbram,AKS1
+Přibyslav. Hřiště,"Přibyslav, Hřiště","Přibyslav, Hřiště",P3PRIB01,15.763055,49.582785,532.5,Přibyslav,Přibyslav. Hřiště,AMS1
+Přimda,Přimda,Přimda,L2PRIM01,12.678056,49.669444,742.76,Přimda,Přimda,AMS1
+Radostín,Radostín,Radostín,B2RADO01,15.9675,49.460278,512.0,Radostín,Radostín,ASS
+Radošice,Radošice,Radošice,C1RADO01,13.7272,49.5322,570.0,Radošice,Radošice,ASS
+Radovesnice II.,Radovesnice II.,Radovesnice II.,H3RADO01,15.368164,50.106526,227.0,Radovesnice II.,Radovesnice II.,AKS2
+Rakovník,Rakovník,Rakovník,L2RAKO01,13.738651,50.099245,313.0,Rakovník,Rakovník,ASS
+Rokycany,Rokycany,Rokycany,L2ROKY01,13.582576,49.73725,370.0,Rokycany,Rokycany,ASS
+Rokytnice v Orlic.horách,Rokytnice v Orlic.horách,Rokytnice v Orlických horách,H2ROKY01,16.460258,50.164432,577.0,Rokytnice v Orlic.horách,Rokytnice v Orlic.horách,AKS1
+Ropice,Ropice,Ropice,O1ROPI01,18.6125,49.6975,327.0,Ropice,Ropice,AKS3
+Roprachtice,Roprachtice,Roprachtice,P2ROPR01,15.414138,50.651199,550.0,Roprachtice,Roprachtice,ASS
+Rožmitál pod Třemšínem,Rožmitál pod Třemšínem,Rožmitál pod Třemšínem,C1ROZM01,13.8664,49.605,524.0,Rožmitál pod Třemšínem,Rožmitál pod Třemšínem,AKS1
+Rožnov pod Radhoštěm,Rožnov pod Radhoštěm,Rožnov pod Radhoštěm,O3ROZN01,18.138224,49.461251,375.0,Rožnov pod Radhoštěm,Rožnov pod Radhoštěm,AKS4
+Rychnov nad Kněžnou,Rychnov nad Kněžnou,Rychnov nad Kněžnou,H2RYCH01,16.270033,50.164879,335.0,Rychnov nad Kněžnou,Rychnov nad Kněžnou,AKS1
+Rýmařov,Rýmařov,Rýmařov,O1RYMA01,17.296111,49.931389,578.0,Rýmařov,Rýmařov,AKS4
+Řendějov. Nový Samechov,"Řendějov, Nový Samechov","Řendějov, Nový Samechov",P3REND01,15.08814,49.76873,444.0,Řendějov,Řendějov. Nový Samechov,ASS
+Seč,Seč,Seč,H3SECA01,15.6479,49.844725,529.0,Seč,Seč,AKS1
+Sedlec,Sedlec,Sedlec,B2SEDC01,16.120556,49.170833,474.0,Sedlec,Sedlec,AMS
+Sedlice,Sedlice,Sedlice,C1SEDL01,13.9419,49.3756,511.0,Sedlice,Sedlice,AKS3
+Semčice,Semčice,Semčice,P2SEMC01,15.0036,50.3671,234.0,Semčice,Semčice,AKS4
+Semily,Semily,Semily,P2SEMI01,15.315007,50.613006,370.0,Semily,Semily,ASS
+Skuteč,Skuteč,Skuteč,H3SKUT01,15.996141,49.834881,457.0,Skuteč,Skuteč,AKS2
+Slaný,Slaný,Slaný,P1SLAN01,14.090481,50.236779,307.0,Slaný,Slaný,ASS
+Slatina nad Zdobnicí,Slatina nad Zdobnicí,Slatina nad Zdobnicí,H2SLAZ01,16.3875,50.1375,401.0,Slatina nad Zdobnicí,Slatina nad Zdobnicí,ASS
+Slatiny. Milíčeves,"Slatiny, Milíčeves","Slatiny, Milíčeves",H3SLAT01,15.393348,50.379018,254.0,Slatiny,Slatiny. Milíčeves,ASS
+Slezská Harta,Slezská Harta,Slezská Harta,O1HART01,17.575278,49.888611,516.0,Slezská Harta,Slezská Harta,AKS3
+Smolnice,Smolnice,Smolnice,U1SMOL01,13.85617,50.30872,345.0,Smolnice,Smolnice,AKS1
+Sněžník,Sněžník,Sněžník,U1SNEZTT,14.10717,50.79367,716.0,Sněžník,Sněžník,TOTAL
+Sokolov,Sokolov,Sokolov,L3SOKO01,12.639266,50.176985,407.0,Sokolov,Sokolov,AKS2
+Staňkov,Staňkov,Staňkov,L1STAN01,13.067369,49.552537,362.0,Staňkov,Staňkov,AKS1
+Staré Hutě,Staré Hutě,Staré Hutě,B2STHU01,17.2883,49.1372,427.0,Staré Hutě,Staré Hutě,ASS
+Staré Město,Staré Město,Staré Město,B1STME01,17.4322,49.0917,221.0,Staré Město,Staré Město,AKS1
+Staré Město pod Sněžníkem. Paprsek,"Staré Město pod Sněžníkem, Paprsek",Paprsek,O2PAPR01,16.988889,50.209444,1001.0,Staré Město pod Sněžníkem,Staré Město pod Sněžníkem. Paprsek,AKS4
+Staré Sedlo. Darmyšl,"Staré Sedlo, Darmyšl","Staré Sedlo, Darmyšl",L2DARM01,12.878357,49.639765,448.0,Staré Sedlo,Staré Sedlo. Darmyšl,ASS
+Stod,Stod,Stod,L1STOD01,13.166901,49.639696,337.0,Stod,Stod,ASS
+Strakonice. Nové Strakonice,"Strakonice, Nové Strakonice","Strakonice, Nové Strakonice",C1STRA01,13.8827,49.2546,404.0,Strakonice,Strakonice. Nové Strakonice,AKS2
+Strání,Strání,Strání,B1STRN01,17.7086,48.9033,383.0,Strání,Strání,AKS1
+Strašice,Strašice,Strašice,L2STRA01,13.753217,49.742781,526.0,Strašice,Strašice,ASS
+Strašín,Strašín,Strašín,C1STRS01,13.6425,49.1797,637.0,Strašín,Strašín,ASS
+Straškov-Vodochody,Straškov-Vodochody,Straškov-Vodochody,U1STRV01,14.255,50.36389,214.0,Straškov-Vodochody,Straškov-Vodochody,ASS
+Stráž nad Ohří,Stráž nad Ohří,Stráž nad Ohří,L3STRA01,13.051677,50.338823,330.0,Stráž nad Ohří,Stráž nad Ohří,ASS
+Stráž pod Ralskem,Stráž pod Ralskem,Stráž pod Ralskem,U2STRR01,14.80739,50.70361,310.0,Stráž pod Ralskem,Stráž pod Ralskem,AKS1
+Strážnice,Strážnice,Strážnice,B1STRZ01,17.3381,48.8992,176.0,Strážnice,Strážnice,AKS1
+Strážný,Strážný,Strážný,C1STRZ01,13.72028,48.908822,811.0,Strážný,Strážný,ASS
+Strmilov,Strmilov,Strmilov,C2STRM01,15.2064,49.1631,582.0,Strmilov,Strmilov,ASS
+Strojetice,Strojetice,Strojetice,U1STRJ01,13.47694,50.17378,372.0,Strojetice,Strojetice,AKS2
+Střelice,Střelice,Střelice,B2STRE01,15.9828,48.9934,325.0,Střelice,Střelice,ASS
+Stříbro,Stříbro,Stříbro,L2STRI01,12.981105,49.752524,438.0,Stříbro,Stříbro,AKS2
+Studenec,Studenec,Studenec,P2STUD01,15.550286,50.55272,532.0,Studenec,Studenec,ASS
+Světlá Hora,Světlá Hora,Světlá Hora,O1SVET01,17.4011,50.0331,593.0,Světlá Hora,Světlá Hora,AKS2
+Svratouch,Svratouch,Svratouch,H3SVRA01,16.034167,49.735,734.0,Svratouch,Svratouch,AMS1
+Šatov,Šatov,Šatov,B2SATO01,16.020556,48.789167,238.0,Šatov,Šatov,ASS
+Šerák,Šerák,Šerák,O1SERATT,17.1075,50.1883,1320.0,Šerák,Šerák,TOTAL
+Šindelová. Obora,"Šindelová, Obora","Šindelová, Obora",L3SIND01,12.597466,50.317449,589.0,Šindelová,Šindelová. Obora,AKS1
+Šluknov,Šluknov,Šluknov,U2SLUK01,14.45525,51.002722,352.0,Šluknov,Šluknov,ASS
+Špičák,Špičák,Špičák,L1SPIC01,13.215816,49.169506,973.0,Špičák,Špičák,AKS3
+Šternberk,Šternberk,Šternberk,O2STEK01,17.275988,49.717754,247.0,Šternberk,Šternberk,AKS4
+Štítná nad Vláří - Popov,Štítná nad Vláří - Popov,Štítná nad Vláří - Popov,B1STIT01,17.9711,49.0728,315.0,Štítná nad Vláří - Popov,Štítná nad Vláří - Popov,AKS1
+Štíty,Štíty,Štíty,O2STIT01,16.764343,49.956566,432.0,Štíty,Štíty,AKS4
+Štoky,Štoky,Štoky,P3STOK01,15.590799,49.501462,530.0,Štoky,Štoky,ASS
+Šumperk,Šumperk,Šumperk,O2SUMP01,16.9675,49.9742,328.0,Šumperk,Šumperk,AKS2
+Tábor. Měšice,"Tábor, Měšice","Tábor, Měšice",C2TABO01,14.702389,49.41,467.0,Tábor,Tábor. Měšice,AKS1
+Tachov,Tachov,Tachov,L2TACH01,12.623135,49.798357,487.0,Tachov,Tachov,AKS3
+Temelín,Temelín,Temelín,C1TEME01,14.342222,49.197778,500.0,Temelín,Temelín,AMS1
+Teplice,Teplice,Teplice,U1TEPL01,13.836344,50.645153,227.0,Teplice,Teplice,AKS1
+Teplice nad Metují Zdoňov,Teplice nad Metují Zdoňov,Teplice nad Metují Zdoňov,H1TEPZ01,16.147285,50.641099,531.0,Teplice nad Metují,Teplice nad Metují Zdoňov,AKS2
+Terešov,Terešov,Terešov,L2TERE01,13.707071,49.901862,402.0,Terešov,Terešov,ASS
+Tisá,Tisá,Tisá,U1TISA01,14.02167,50.78694,556.0,Tisá,Tisá,ASS
+Tišnov. Hájek,"Tišnov, Hájek","Tišnov, Hájek",B2HAJE01,16.4725,49.3731,409.0,Tišnov,Tišnov. Hájek,AKS2
+Trhové Sviny,Trhové Sviny,Trhové Sviny,C2TRHS01,14.6378,48.8433,468.0,Trhové Sviny,Trhové Sviny,ASS
+Troubsko,Troubsko,Troubsko,B2TROU01,16.5074,49.1745,278.0,Troubsko,Troubsko,AKS2
+Trutnov,Trutnov,Trutnov,H1TRUT01,15.898311,50.558597,437.0,Trutnov,Trutnov,AKS3
+Třebařov,Třebařov,Třebařov,O2TREB01,16.6969,49.8158,375.0,Třebařov,Třebařov,AKS2
+Třebíč. Podklášteří,Třebíč,Třebíč,B2TREB01,15.87,49.2236,463.0,Třebíč,Třebíč. Podklášteří,MSS
+Třeboň. Lužnice,"Třeboň, Lužnice","Třeboň, Lužnice",C2TREB01,14.7586,49.0622,428.0,Třeboň,Třeboň. Lužnice,AKS2
+Třešť,Třešť,Třešť,B2TRES01,15.476111,49.293889,574.0,Třešť,Třešť,ASS
+Tuhaň,Tuhaň,Tuhaň,P2TUHA01,14.520416,50.29582,160.0,Tuhaň,Tuhaň,AKS1
+Turnov,Turnov,Turnov,P2TURN01,15.154434,50.589631,253.0,Turnov,Turnov,AKS4
+Tušimice,Tušimice,Tušimice,U1KATU01,13.32806,50.37667,321.71,Tušimice,Tušimice,AMS1
+Uhelná. Nové Vilémovice,"Uhelná, Nové Vilémovice","Uhelná, Nové Vilémovice",O1UHNV01,16.984708,50.332069,615.0,Uhelná,Uhelná. Nové Vilémovice,AKS4
+Úlice,Úlice,Úlice,L2ULIC01,13.143405,49.759189,428.0,Úlice,Úlice,ASS
+Úpice,Úpice,Úpice,H1UPIC01,16.011618,50.506419,413.0,Úpice,Úpice,AKS1
+Ústí nad Labem. Kočkov,"Ústí nad Labem, Kočkov","Ústí nad Labem, Kočkov",U1ULKO01,14.04111,50.68333,375.39,Ústí nad Labem,Ústí nad Labem. Kočkov,AMS1
+Ústí nad Labem. Vaňov,"Ústí nad Labem, Vaňov","Ústí nad Labem, Vaňov",U1ULMA01,14.05831,50.62556,150.0,Ústí nad Labem,Ústí nad Labem. Vaňov,AKS2
+Ústí nad Orlicí,Ústí nad Orlicí,Ústí nad Orlicí,H2USTI01,16.422222,49.980278,401.7,Ústí nad Orlicí,Ústí nad Orlicí,AMS1
+Valašská Bystřice,Valašská Bystřice,Valašská Bystřice,O3VABY01,18.106298,49.416432,458.0,Valašská Bystřice,Valašská Bystřice,ASS
+Valašská Senice,Valašská Senice,Valašská Senice,O3VASE01,18.126944,49.240278,615.0,Valašská Senice,Valašská Senice,AKS2
+Valašské Klobouky,Valašské Klobouky,Valašské Klobouky,B1VKLO01,18.015,49.139167,402.0,Valašské Klobouky,Valašské Klobouky,ASS
+Valašské Meziříčí,Valašské Meziříčí,Valašské Meziříčí,O3VALM01,17.9742,49.4636,334.0,Valašské Meziříčí,Valašské Meziříčí,AKS2
+Varnsdorf,Varnsdorf,Varnsdorf,U2VARN01,14.60222,50.90556,367.0,Varnsdorf,Varnsdorf,AKS1
+Vatín,Vatín,Vatín,B2VATI01,15.96806,49.52306,558.0,Vatín,Vatín,AKS1
+Vavřinec. Žíšov,"Vavřinec, Žíšov","Vavřinec, Žíšov",P3STAN01,15.067741,49.902888,415.0,Vavřinec,Vavřinec. Žíšov,AKS2
+Velichovky,Velichovky,Velichovky,H1VELI01,15.832503,50.356612,299.0,Velichovky,Velichovky,AKS2
+Velká Bíteš,Velká Bíteš,Velká Bíteš,B2VBIT01,16.221,49.2918,485.0,Velká Bíteš,Velká Bíteš,ASS
+Velká Černoc,Velká Černoc,Velká Černoc,U1VECE01,13.58406,50.20283,329.0,Velká Černoc,Velká Černoc,ASS
+Velké Karlovice,Velké Karlovice,Velké Karlovice,O3VEKA01,18.286944,49.359444,518.0,Velké Karlovice,Velké Karlovice,AKS3
+Velké Losiny,Velké Losiny,Velké Losiny,O2LOSI01,17.051365,50.038056,411.0,Velké Losiny,Velké Losiny,ASS
+Velké Meziříčí,Velké Meziříčí,Velké Meziříčí,B2VMEZ01,16.0086,49.3528,452.0,Velké Meziříčí,Velké Meziříčí,AKS1
+Verneřice,Verneřice,Verneřice,U2VERN01,14.30492,50.65789,507.0,Verneřice,Verneřice,ASS
+Vidnava,Vidnava,Vidnava,O1VIDN01,17.1917,50.37794,228.0,Vidnava,Vidnava,AKS4
+Vimperk,Vimperk,Vimperk,C1VIMP01,13.7825,49.065833,628.0,Vimperk,Vimperk,AKS3
+Višňová,Višňová,Višňová,U2PRED01,15.01814,50.96594,248.0,Višňová,Višňová,ASS
+Vítkov,Vítkov,Vítkov,O1VITK01,17.757308,49.778037,490.0,Vítkov,Vítkov,AKS2
+Vizovice,Vizovice,Vizovice,B1VIZO01,17.84361,49.22297,313.0,Vizovice,Vizovice,AKS1
+Vlašim,Vlašim,Vlašim,P3VLAS01,14.894545,49.691749,415.0,Vlašim,Vlašim,AKS4
+Vlkonice,Vlkonice,Vlkonice,C1VLKO01,13.5897,49.3022,493.0,Vlkonice,Vlkonice,AKS1
+Volary,Volary,Volary,C1VOLR01,13.896111,48.901667,749.0,Volary,Volary,AKS2
+Volyně. Nihošovice,"Volyně, Nihošovice","Volyně, Nihošovice",C1VOLY01,13.861111,49.185278,448.0,Volyně,Volyně. Nihošovice,ASS
+Voznice,Voznice,Voznice,P1VOZN01,14.212691,49.819169,385.0,Voznice,Voznice,ASS
+Vráž,Vráž,Vráž,C1VRAZ01,14.1289,49.3844,433.0,Vráž,Vráž,AKS1
+Vrchlabí,Vrchlabí,Vrchlabí,H1VRCH01,15.646389,50.622778,482.0,Vrchlabí,Vrchlabí,AKS1
+Vsetín,Vsetín,Vsetín,O3VSET01,17.9961,49.3442,387.0,Vsetín,Vsetín,AKS1
+Vysoké nad Jizerou,Vysoké nad Jizerou,Vysoké nad Jizerou,P2VYSK01,15.408523,50.682981,695.0,Vysoké nad Jizerou,Vysoké nad Jizerou,ASS
+Vysoké Studnice,Vysoké Studnice,Vysoké Studnice,B2VSTU01,15.7303,49.3931,568.0,Vysoké Studnice,Vysoké Studnice,ASS
+Vyšší Brod,Vyšší Brod,Vyšší Brod,C2VBRO01,14.3144,48.6175,559.0,Vyšší Brod,Vyšší Brod,AKS1
+Zahrádky,Zahrádky,Zahrádky,U2ZAHR01,14.51467,50.61428,270.0,Zahrádky,Zahrádky,ASS
+Zámyšl,Zámyšl,Zámyšl,C1ZAMY01,13.374402,49.22629,800.0,Zámyšl,Zámyšl,ASS
+Zbečno,Zbečno,Zbečno,P1ZBEC01,13.935,50.0614,262.0,Zbečno,Zbečno,ASS
+Zbiroh. Švabín,"Zbiroh, Švabín","Zbiroh, Švabín",L2ZBIR01,13.751748,49.853987,476.0,Zbiroh,Zbiroh. Švabín,AKS2
+Zbýšov. Dobrovítov,"Zbýšov, Dobrovítov","Zbýšov, Dobrovítov",H3ZBYS01,15.329835,49.78686,490.0,Zbýšov,Zbýšov. Dobrovítov,AKS2
+Zbytiny,Zbytiny,Zbytiny,C1ZBYT01,13.968889,48.926111,792.0,Zbytiny,Zbytiny,ASS
+Zdobnice,Zdobnice,Zdobnice,H2ZDOB01,16.408505,50.247678,671.0,Zdobnice,Zdobnice,ASS
+Zlaté Hory,Zlaté Hory,Zlaté Hory,O1ZLHO01,17.3926,50.252778,444.0,Zlaté Hory,Zlaté Hory,AKS4
+Zlín,Zlín,Zlín,B1ZLIN01,17.643333,49.236667,283.0,Zlín,Zlín,AKS3
+Zlonice,Zlonice,Zlonice,P1ZLON01,14.086873,50.283586,231.0,Zlonice,Zlonice,ASS
+Žacléř,Žacléř,Žacléř,H1ZACL01,15.907098,50.661205,644.0,Žacléř,Žacléř,AKS2
+Žamberk,Žamberk,Žamberk,H2ZAMB01,16.45477,50.069195,405.0,Žamberk,Žamberk,AKS2
+Žandov. Horní Police,"Žandov, Horní Police","Žandov, Horní Police",U2ZAND01,14.403417,50.708083,275.0,Žandov,Žandov. Horní Police,ASS
+Žatec,Žatec,Žatec,U1ZATE01,13.54319,50.34147,210.0,Žatec,Žatec,AKS1
+Ždánice,Ždánice,Ždánice,B2ZDAN01,17.025556,49.071944,238.0,Ždánice,Ždánice,AKS3
+Žďár nad Sázavou. Stržanov,"Žďár nad Sázavou, Stržanov",Žďár nad Sázavou,P3ZDAR01,15.936455,49.597833,605.0,Žďár nad Sázavou,Žďár nad Sázavou. Stržanov,ASS
+Železná,Železná,Železná,L2BELA01,12.581084,49.583431,511.0,Železná,Železná,ASS
+Železná Ruda,Železná Ruda,Železná Ruda,L1ZRUD01,13.228729,49.138245,754.0,Železná Ruda,Železná Ruda,ASS
+Žlutice,Žlutice,Žlutice,L2ZLUT01,13.160412,50.09822,569.0,Žlutice,Žlutice,ASS
