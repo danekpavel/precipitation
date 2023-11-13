@@ -19,12 +19,12 @@ station_table_cols = {
 
 
 class PrecipitationDB:
-    def __init__(self, host, user, password):
+    def __init__(self, host, user, password, database):
         self.dbconfig = dict(
             host=host,
             user=user,
             password=password,
-            database='precipitation')
+            database=database)
 
 
     @contextmanager

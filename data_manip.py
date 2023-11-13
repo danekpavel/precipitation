@@ -15,8 +15,8 @@ logger = logging.getLogger(__name__)
 db = database.PrecipitationDB(
     host='localhost',
     user=environ['DB_USER'],
-    password=environ['DB_PASSWORD'])
-
+    password=environ['DB_PASSWORD'],
+    database = environ['DB_DATABASE'])
 
 def read_precip_table(date: str, dir: str ='data') -> pd.DataFrame:
     file = path.join(dir, date) + '.csv'

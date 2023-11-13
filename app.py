@@ -10,6 +10,7 @@ import locale
 from functools import cmp_to_key
 import logging
 import logging_config
+from typing import Iterable
 
 logging_config.config()
 logger = logging.getLogger(__name__)
@@ -17,7 +18,16 @@ logger = logging.getLogger(__name__)
 locale.setlocale(locale.LC_ALL, 'cs')
 
 
-def sorted_locale(x: list[str]) -> list[str]:
+def sorted_locale(x: Iterable[str]) -> list[str]:
+    """
+    Locale-aware sorted() function.
+
+    Args:
+        x: data to be sorted
+
+    Returns:
+        Data sorted according to current locale.
+    """
     return sorted(x, key=cmp_to_key(locale.strcoll))
 
 
@@ -57,6 +67,16 @@ def hex_to_rgb(color: str, alpha: float = None) -> str:
 
 
 def date_marks(start: datetime, end: datetime) -> tuple[pd.DatetimeIndex, list[str]]:
+    """
+    Creates marks for a range slider.
+
+    Args:
+        start: start date
+        end: end date
+
+    Returns:
+
+    """
     # find the highest frequency with less than 10 timepoints
     freqs = ['D', '2D', '3D', 'W', '2W', 'MS', '2MS', '3MS', '6MS', 'YS', '2YS']
     for freq in freqs:
