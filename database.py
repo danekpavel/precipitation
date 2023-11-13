@@ -99,10 +99,11 @@ class PrecipitationDB:
             with conn.cursor() as cursor:
                 cursor.execute(queries[0])
                 for d in data:
+                    d.dropna(inplace=True)
                     logger.info(f'Inserting {d.shape[0]} rows into database temporary table.')
                     # make tuples from data
                     d = d.loc[:, ['station', 'amount', 'datetime']].itertuples(index=False, name=None)
-                    cursor.executemany(queries[1], d)
+                    cursor.executemany(queries[1], list(d))
                 logger.info(f'Copying data from temporary table to hourly_precip.')
                 cursor.execute(queries[2])
                 conn.commit()
@@ -140,20 +141,20 @@ class PrecipitationDB:
 
 
     def insert_stations(self, stations: pd.DataFrame) -> None:
-        query = (f'INSERT INTO stations ({','.join(station_table_cols.keys())}) '
-                 f'VALUES ({','.join(['%s']*len(station_table_cols.keys()))})')
+        query = (f'INSERT INTO stations ({",".join(station_table_cols.keys())}) '
+                 f"VALUES ({','.join(['%s']*len(station_table_cols.keys()))})")
         data = stations.loc[:, station_table_cols.values()].itertuples(index=False, name=None)
 
         logger.info(f'Inserting {stations.shape[0]} rows into `stations` table.')
         with self.get_connection() as conn:
             with conn.cursor() as cursor:
-                cursor.executemany(query, data)
+                cursor.executemany(query, list(data))
                 conn.commit()
 
 
     def get_stations_data(self) -> pd.DataFrame:
         col_names = station_table_cols.keys()
-        query = f'SELECT {', '.join(col_names)} FROM stations'
+        query = f'SELECT {", ".join(col_names)} FROM stations'
         with self.get_connection() as conn:
             with conn.cursor() as cursor:
                 cursor.execute(query)

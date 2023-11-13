@@ -15,7 +15,7 @@ from typing import Iterable
 logging_config.config()
 logger = logging.getLogger(__name__)
 
-locale.setlocale(locale.LC_ALL, 'cs')
+locale.setlocale(locale.LC_ALL, 'cs_CZ')
 
 
 def sorted_locale(x: Iterable[str]) -> list[str]:
