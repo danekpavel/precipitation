@@ -13,7 +13,7 @@ logging_config.config()
 logger = logging.getLogger(__name__)
 
 db = database.PrecipitationDB(
-    host='danekpavel.mysql.eu.pythonanywhere-services.com',
+    host=environ['DB_HOST'],
     user=environ['DB_USER'],
     password=environ['DB_PASSWORD'],
     database = environ['DB_DATABASE'])

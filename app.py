@@ -230,6 +230,7 @@ def get_radio_options(disabled: bool = False):
 
 pio.templates.default = 'plotly_white'
 app = Dash(__name__)
+app.title = 'Srážky v ČR'
 
 app.layout = html.Div([
     html.Div([  # left container
