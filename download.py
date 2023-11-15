@@ -101,6 +101,6 @@ def download_page(day_offset: int = 0, page: int = 1) -> BeautifulSoup:
 
 # dd = str(date.today())
 # df = download_precip_date(dd)
-df, dat = download_precip_offset(day_offset=2)
+df, dat = download_precip_offset(day_offset=1)
 df.to_csv('data/' + dat + '.csv', index=False)
 

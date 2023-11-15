@@ -297,7 +297,8 @@ app.layout = html.Div([
             dcc.Graph(
                 id='scatterplot',
                 figure=blank_fig(),
-                config=dict(locale='cs'),
+                config=dict(locale='cs',
+                            displayModeBar=False),
                 style={'height': '100%'}
             )],
             style={'flex': 1}
@@ -318,7 +319,8 @@ app.layout = html.Div([
             dcc.Graph(
                 id='barplot',
                 figure=blank_fig(),
-                config=dict(locale='cs'),
+                config=dict(locale='cs',
+                            displayModeBar=False),
                 style={'height': '100%'}
             )],
             style={'flex': 1}

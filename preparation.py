@@ -31,6 +31,7 @@ trans = pd.read_excel('data/prevod_stanic.xlsx', sheet_name='from_js')
 # keep only the final selection
 final = trans.loc[trans['final'].notna(), ['js', 'precip_known', 'final']]
 
+
 # join the two
 both = pd.merge(final, stations_data, left_on='js', right_on='FNAME', how='left')
 # keep only non-duplicated stations
