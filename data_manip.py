@@ -9,6 +9,8 @@ import logging_config
 from datetime import datetime
 from typing import Generator, Callable, Iterable
 
+TranslatorType = Callable[[Iterable[str]], list[str]]
+
 logging_config.config()
 logger = logging.getLogger(__name__)
 
@@ -18,28 +20,69 @@ db = database.PrecipitationDB(
     password=environ['DB_PASSWORD'],
     database = environ['DB_DATABASE'])
 
-def read_precip_table(date: str, dir: str ='data') -> pd.DataFrame:
+
+def read_precip_table(date: str, dir: str = 'data') -> pd.DataFrame:
+    """
+    Reads precipitation data from a CSV file.
+
+    Args:
+        date: date in ISO format
+        dir: directory where the file is located
+
+    Returns:
+        Precipitation data.
+    """
     file = path.join(dir, date) + '.csv'
     return pd.read_csv(file)
 
 
 def write_precip_table(df: pd.DataFrame, date: str, dir: str ='data') -> None:
+    """
+    Saves precipitation data to a CSV file named by the date.
+
+    Args:
+        df: precipitation data
+        date: date which will be used for the filename
+        dir: directory where to save the file
+    """
     file = path.join(dir, date) + '.csv'
     df.to_csv(file, index=False)
 
 
 def stations_from_file(date: str) -> list[str]:
+    """
+    Reads stations from a precipitation file.
+
+    Args:
+        date: date whose file will be used
+
+    Returns:
+        List of stations.
+    """
     df = read_precip_table(date)
     stations = sorted(list(df['Stanice']))
     return stations
 
 
 def fill_stations_table() -> None:
+    """
+    Reads station data from a file and inserts it into a database table.
+    """
     stations = pd.read_csv('data/stations_data.csv')
     db.insert_stations(stations)
 
 
-def get_stations_data(name_translator: Callable = None) -> pd.DataFrame:
+def get_stations_data(name_translator: TranslatorType = None) -> pd.DataFrame:
+    """
+    Reads station data from the database, translating their names when
+        a translator is given.
+
+    Args:
+        name_translator: function for name translation
+
+    Returns:
+        Stations data
+    """
     df = db.get_stations_data()
     df['elevation'] = df['elevation'].astype(int)
     if name_translator is not None:
@@ -49,16 +92,25 @@ def get_stations_data(name_translator: Callable = None) -> pd.DataFrame:
     return df
 
 
-def get_station_name_translator() -> Callable[[Iterable[str]], list[str]]:
+def get_station_name_translator() -> TranslatorType:
+    """
+    Creates a station name translator function.
+
+    Returns:
+        The translator
+    """
     df = pd.read_csv('data/stations_data.csv')
     d = dict(zip(df['precip_known'], df['final']))
 
     return lambda names: [d[n] for n in names]
 
 
-def get_daily_precipitation(station_translator: Callable = None) -> pd.DataFrame:
+def get_daily_precipitation(station_translator: TranslatorType = None) -> pd.DataFrame:
     """
-    Retrieves daily precipitation data from the database.
+    Retrieves daily precipitation data by station from the database.
+
+    Args:
+        station_translator: station name translator
 
     Returns:
         Daily precipitation data for every station.
@@ -114,12 +166,12 @@ def precip_table_to_long(df: pd.DataFrame, date: str) -> pd.DataFrame:
     Converts a one-day precipitation table from wide to long format
 
     Args:
-        df: precipitation table in wide format (columns 'Stanice' followed by '1'..'24')
+        df: precipitation table in wide format (columns `Stanice` followed by `1`..`24`)
         date: day of measurements
 
     Returns:
-        One-day precipitation table in long format with columns 'station',
-        'amount' and 'datetime'.
+        One-day precipitation table in long format with columns `station`,
+            `amount` and `datetime`.
     """
 
     # reshape into three columns: Stanice, hour, precip
@@ -135,6 +187,16 @@ def precip_table_to_long(df: pd.DataFrame, date: str) -> pd.DataFrame:
 
 
 def precip_table_to_wide(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Converts a one-day precipitation table from long to wide format
+
+    Args:
+        df: one-day precipitation table in long format with columns `station`,
+            `amount` and `datetime`.
+
+    Returns:
+        Precipitation table in wide format (columns `Stanice` followed by `1`..`24`)
+    """
     df = df.copy()
     # extract hour as a new column (1..24) and drop 'datetime'
     df['hour'] = pd.DatetimeIndex(df['datetime']).hour + 1
@@ -149,6 +211,12 @@ def precip_table_to_wide(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def update_db_precipitation_from_dir(dir: str = 'data') -> None:
+    """
+    Updates the database from CSV files for dates not yet present there.
+
+    Args:
+        dir: directory to read files from
+    """
     # find dates already present in the DB
     dates_in_db = db.get_precipitation_dates()
     dates_in_db = [str(d) for d in dates_in_db]
@@ -159,12 +227,24 @@ def update_db_precipitation_from_dir(dir: str = 'data') -> None:
     file_dates_new = [fd for fd in file_dates
                       if re.fullmatch(r'\d{4}-\d{2}-\d{2}', fd)
                       and fd not in dates_in_db]
+
     update_db_precipitation_for_dates(file_dates_new)
 
 
-def generate_date_data(dates: list[str],
-                       dir: str = 'data',
-                       max_rows: int = 55000) -> Generator[pd.DataFrame, None, None]:
+def generate_data_for_dates(dates: list[str],
+                            dir: str = 'data',
+                            max_rows: int = 60000) -> Generator[pd.DataFrame, None, None]:
+    """
+    Creates a generator which successively returns precipitation data for given dates.
+
+    Args:
+        dates: dates for which data will be read from CSV files
+        dir: location of the files
+        max_rows: maximum number of rows in one batch (yield)
+
+    Returns:
+        Data generator.
+    """
     df_batch = None  # used to accumulate data for one batch
     for date in dates:
         df = read_precip_table(date, dir)
@@ -174,6 +254,7 @@ def generate_date_data(dates: list[str],
             message = (f'Data for {date} has more rows ({df.shape[0]}) '
                        f'than allowed by `max_rows` ({max_rows}). '
                        f'Consider increasing `max_rows`.')
+            logger.error(message)
             raise RuntimeError(message)
 
         if df_batch is None:
@@ -195,12 +276,20 @@ def generate_date_data(dates: list[str],
 def update_db_precipitation_for_dates(dates: list[str],
                                       dir: str = 'data',
                                       max_rows: int = 60000) -> None:
+    """
+    Updates the database from CSV files for given dates.
+
+    Args:
+        dates: dates to be added in the database
+        dir: CSV file location
+        max_rows: maximum number of rows inserted at once
+    """
     if len(dates) == 0:
         logger.info(f'Database update requested but 0 dates given.')
         return
 
     logger.info(f'Data will be inserted into database for {len(dates)} date(s): {", ".join(dates)}')
-    data = generate_date_data(dates=dates, dir=dir, max_rows=max_rows)
+    data = generate_data_for_dates(dates=dates, dir=dir, max_rows=max_rows)
     db.insert_precip_data(data)
 
 # db.create_tables()

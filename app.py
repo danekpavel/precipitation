@@ -105,19 +105,24 @@ trace_colors = colors = [
     '#7f7f7f', '#bcbd22', '#17becf', '#9edae5', '#c5b0d5', '#ff9896', '#c49c94',
     '#f7b6d2', '#aec7e8', '#ffbb78', '#98df8a']
 date_picker_format = 'Y-MM-DD'
+# color scale for topography
 topo_colorscale = [(0, '#3c855e'), (.4, '#ffd39e'), (1, '#88594d')]
 
 station_names_translator = dm.get_station_name_translator()
 
+# stations data
 stations_data = dm.get_stations_data(station_names_translator)
-# create options for the stations dropdown menu
+# sorted station names for the dropdown menu
 stations_list = sorted_locale(stations_data['name'])
 
+# precipitation data
 daily_data = dm.get_daily_precipitation(station_names_translator)
+
+# find date range and compute date marks and their positions for the RangeSlider
 date_range = daily_data['date'].min(), daily_data['date'].max()
 # date_range = datetime.fromisoformat('2020-01-01'), datetime.fromisoformat('2025-01-01')
-dates_cut, slider_m = date_marks(*date_range)
-slider_at = (dates_cut - date_range[0]).days
+dates_at, slider_marks = date_marks(*date_range)
+slider_at = (dates_at - date_range[0]).days
 slider_len = (date_range[1] - date_range[0]).days
 
 #region Scattermapbox definition
@@ -202,10 +207,19 @@ fig_map.update_layout(
 #endregion
 
 
-def blank_fig():
+def blank_fig(text: str = '<i>vyberte stanici</i>') -> go.Figure:
+    """
+    Creates a blank figure with text.
+
+    Args:
+        text: Text displayed in the figure.
+
+    Returns:
+        The figure.
+    """
     fig = go.Figure(go.Scatter(
         x=[1], y=[1],
-        text='<i>vyberte stanici</i>',
+        text=text,
         mode='text',
         hoverinfo='skip'
     ))
@@ -220,10 +234,19 @@ def blank_fig():
     return fig
 
 
-def get_radio_options(disabled: bool = False):
+def get_radio_options(disabled: bool = False) -> list[dict[str, str | bool]]:
+    """
+    Creates options to be used with `dcc.RadioItems`
+
+    Args:
+        disabled: Should the radios be disabled?
+
+    Returns:
+       List of options.
+    """
     return [
-        {'value': 'sum', 'label': 'Suma srážek (mm)', 'disabled': disabled},
-        {'value': 'mean', 'label': 'Denní průměr srážek (mm)', 'disabled': disabled},
+        {'value': 'sum', 'label': 'Suma (mm)', 'disabled': disabled},
+        {'value': 'mean', 'label': 'Denní průměr (mm)', 'disabled': disabled},
         {'value': 'var', 'label': 'Variabilita', 'disabled': disabled}
     ]
 
@@ -233,7 +256,7 @@ app = Dash(__name__)
 app.title = 'Srážky v ČR'
 
 app.layout = html.Div([
-    html.Div([  # left container
+    html.Div([  # left-side container
         html.Div([  # map
             dcc.Graph(
                 id='map',
@@ -257,7 +280,7 @@ app.layout = html.Div([
                    'width': '100%'}
         )],
         id='left-pane'),
-    html.Div([  # right container
+    html.Div([  # right-side container
         html.Div([  # date slider and pickers
             html.Div([
                 dcc.DatePickerSingle(
@@ -275,7 +298,7 @@ app.layout = html.Div([
                     max=slider_len,
                     step=1,
                     value=[0, slider_len],
-                    marks=dict(zip(slider_at, slider_m))
+                    marks=dict(zip(slider_at, slider_marks))
                 )],
                 style={'width': '93%',
                        'marginTop': '8px'}
@@ -348,15 +371,29 @@ app.layout = html.Div([
     Input('date-picker-from', 'date'),
     Input('date-picker-to', 'date'),
     Input('date-slider', 'value'))
-def sync_slider_picker_dates(date_picker_from, date_picker_to, slider_value):
+def sync_slider_picker_dates(date_picker_from: datetime,
+                             date_picker_to: datetime,
+                             slider_value: int) -> tuple[datetime, datetime, int]:
+    """
+    Synchronizes date pickers with the slider and vice versa.
 
+    Args:
+        date_picker_from: date selected in `date-picker-from`.
+        date_picker_to: date selected in `date-picker-to`.
+        slider_value: value of value-slider
+
+    Returns:
+        A tuple containing (potentially) new values for:
+            `date-picker-from` date,
+            `date-picker-to` date,
+            `date-slider` value
+    """
     if ctx.triggered_id == 'date-slider':
         date_picker_from = date_range[0] + timedelta(days=slider_value[0])
         date_picker_to = date_range[0] + timedelta(days=slider_value[1])
-
     elif ctx.triggered_id == 'date-picker-from':
         slider_value[0] = (datetime.fromisoformat(date_picker_from) - date_range[0]).days
-    else:
+    else: # date-picker-to
         slider_value[1] = (datetime.fromisoformat(date_picker_to) - date_range[0]).days
 
     return date_picker_from, date_picker_to, slider_value
@@ -368,27 +405,31 @@ def sync_slider_picker_dates(date_picker_from, date_picker_to, slider_value):
     Input('colors-displayed', 'data'),
     Input('colors-available', 'data'),
     Input('dropdown-stations', 'value'))
-def update_station_colors(displayed: str, available: str,
+def update_station_colors(displayed: str,
+                          available: str,
                           selected: list[str]) -> tuple[str, str]:
     """
     Updates the lists of displayed and available colors after a change in
     the stations dropdown menu.
 
     Args:
-        displayed: colors of displayed stations
-        available: available colors
+        displayed: JSON dump of the list of displayed stations' colors
+        available: JSON dump of the dictionary of available colors
         selected: stations selected in the dropdown
 
     Returns:
-        Displayed colors.
-        Available colors.
+        A tuple containing JSON dumps of:
+            displayed colors,
+            available colors.
     """
     if selected is None:
         raise PreventUpdate
 
     available = json.loads(available)
     displayed = json.loads(displayed)
+    # newly selected stations
     new = [s for s in selected if s not in displayed]
+    # newly unselected stations
     dropped = [s for s in displayed.keys() if s not in selected]
 
     if new:
@@ -413,7 +454,7 @@ def update_map_highlighted_stations(displayed: str, map: go.Figure) -> go.Figure
     Updates stations highlighted in the map according to 'colors-displayed'.
 
     Args:
-        displayed: colors of displayed stations
+        displayed: JSON dump of displayed stations' colors
         map: map figure
 
     Returns:
@@ -450,17 +491,19 @@ def draw_station_plots(displayed: str,
     Draws plots for currently selected stations.
 
     Args:
-        displayed: colors of displayed stations.
-        slider: slider selected endpoints
+        displayed: JSON dump of the dictionary of displayed stations' colors
+        slider: endpoints of date slider's selection
         agg_fun: function used for aggregation by stations
 
     Returns:
         A tuple containing:
-            Scatterplot figure,
-            Barplot figure
+            scatterplot figure,
+            barplot figure,
+            summary radio options
     """
     displayed = json.loads(displayed)
 
+    # blank figures and disabled options when there's nothing to display
     if not displayed:
         return blank_fig(), blank_fig(), get_radio_options(disabled=True)
 
@@ -537,14 +580,15 @@ def map_station_clicked(selected, click_map):
 
     Args:
         selected: stations selected in the dropdown
-        click_map: click data from 'map'
+        click_map: click data from `map`
 
     Returns:
-        Updated stations dropdown value.
-        Cleared 'map's click data
+        A tuple containing:
+            updated stations dropdown value.
+            cleared `map`'s click data
     """
 
-    # only react to clicks on 'map'
+    # only react to clicks on `map`
     if ctx.triggered_id != 'map':
         raise PreventUpdate
 
@@ -555,7 +599,7 @@ def map_station_clicked(selected, click_map):
     except ValueError:
         selected.append(station)
 
-    # sets 'map's 'clickData' to 'None' so that repeated clicks on the same
+    # set 'map's 'clickData' to 'None' so that repeated clicks on the same
     #   feature are not ignored
     return selected, None
 
