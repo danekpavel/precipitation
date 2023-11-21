@@ -1,21 +1,31 @@
+import data_db_csv
+import logging_config
+
 from dash import Dash, dcc, html, callback, Input, Output, ctx
 from dash.exceptions import PreventUpdate
 import plotly.graph_objects as go
 import plotly.io as pio
-import data_manip as dm
 import pandas as pd
 import json
 from datetime import datetime, timedelta
 import locale
 from functools import cmp_to_key
 import logging
-import logging_config
 from typing import Iterable
+
+RadioOptionsType = list[dict[str, str | bool]]
 
 logging_config.config()
 logger = logging.getLogger(__name__)
 
 locale.setlocale(locale.LC_ALL, 'cs_CZ')
+
+# find the platform-specific code for day of month without leading zero
+try:
+    x = datetime.today().strftime('%#d')
+    day_of_month_code = '%#d'
+except ValueError:
+    day_of_month_code = '%-d'
 
 
 def sorted_locale(x: Iterable[str]) -> list[str]:
@@ -29,14 +39,6 @@ def sorted_locale(x: Iterable[str]) -> list[str]:
         Data sorted according to current locale.
     """
     return sorted(x, key=cmp_to_key(locale.strcoll))
-
-
-# find the platform-specific code for day of month without leading zero
-try:
-    x = datetime.today().strftime('%#d')
-    day_of_month_code = '%#d'
-except ValueError:
-    day_of_month_code = '%-d'
 
 
 def hex_to_rgb(color: str, alpha: float = None) -> str:
@@ -108,15 +110,15 @@ date_picker_format = 'Y-MM-DD'
 # color scale for topography
 topo_colorscale = [(0, '#3c855e'), (.4, '#ffd39e'), (1, '#88594d')]
 
-station_names_translator = dm.get_station_name_translator()
+station_names_translator = data_db_csv.get_station_name_translator()
 
 # stations data
-stations_data = dm.get_stations_data(station_names_translator)
+stations_data = data_db_csv.get_stations_data(station_names_translator)
 # sorted station names for the dropdown menu
 stations_list = sorted_locale(stations_data['name'])
 
 # precipitation data
-daily_data = dm.get_daily_precipitation(station_names_translator)
+daily_data = data_db_csv.get_daily_precipitation(station_names_translator)
 
 # find date range and compute date marks and their positions for the RangeSlider
 date_range = daily_data['date'].min(), daily_data['date'].max()
@@ -234,7 +236,7 @@ def blank_fig(text: str = '<i>vyberte stanici</i>') -> go.Figure:
     return fig
 
 
-def get_radio_options(disabled: bool = False) -> list[dict[str, str | bool]]:
+def get_radio_options(disabled: bool = False) -> RadioOptionsType:
     """
     Creates options to be used with `dcc.RadioItems`
 
@@ -371,9 +373,9 @@ app.layout = html.Div([
     Input('date-picker-from', 'date'),
     Input('date-picker-to', 'date'),
     Input('date-slider', 'value'))
-def sync_slider_picker_dates(date_picker_from: datetime,
-                             date_picker_to: datetime,
-                             slider_value: int) -> tuple[datetime, datetime, int]:
+def sync_slider_picker_dates(date_picker_from: str,
+                             date_picker_to: str,
+                             slider_value: list[int]) -> tuple[datetime, datetime, list[int]]:
     """
     Synchronizes date pickers with the slider and vice versa.
 
@@ -449,13 +451,13 @@ def update_station_colors(displayed: str,
     Output('map', 'figure'),
     Input('colors-displayed', 'data'),
     Input('map', 'figure'))
-def update_map_highlighted_stations(displayed: str, map: go.Figure) -> go.Figure:
+def update_map_highlighted_stations(displayed: str, map_fig: go.Figure) -> go.Figure:
     """
     Updates stations highlighted in the map according to 'colors-displayed'.
 
     Args:
         displayed: JSON dump of displayed stations' colors
-        map: map figure
+        map_fig: map figure
 
     Returns:
         Updated map figure.
@@ -464,8 +466,8 @@ def update_map_highlighted_stations(displayed: str, map: go.Figure) -> go.Figure
 
     # highlight selected stations in the map
     latlon = stations_data.loc[displayed.keys(), ['lat', 'lon']]
-    map = go.Figure(map)
-    map.update_traces(
+    map_fig = go.Figure(map_fig)
+    map_fig.update_traces(
         lat=latlon['lat'],
         lon=latlon['lon'],
         marker=dict(
@@ -474,7 +476,7 @@ def update_map_highlighted_stations(displayed: str, map: go.Figure) -> go.Figure
         selector=dict(name='selected_stations')
     )
 
-    return map
+    return map_fig
 
 
 @callback(
@@ -486,7 +488,7 @@ def update_map_highlighted_stations(displayed: str, map: go.Figure) -> go.Figure
     Input('summary-radios', 'value'))
 def draw_station_plots(displayed: str,
                        slider: list[int, int],
-                       agg_fun: str) -> tuple[go.Figure, go.Figure]:
+                       agg_fun: str) -> tuple[go.Figure, go.Figure, RadioOptionsType]:
     """
     Draws plots for currently selected stations.
 

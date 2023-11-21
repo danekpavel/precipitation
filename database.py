@@ -8,7 +8,7 @@ from typing import Generator
 logger = logging.getLogger(__name__)
 
 # station data column name translation from DB names (keys) to CSV names (values)
-station_table_cols = {
+STATION_TABLE_COLS = {
     'name': 'precip_known',
     'elevation': 'ELEVATION',
     'lat': 'Y',
@@ -37,6 +37,12 @@ class PrecipitationDB:
 
 
     def get_daily_precipitation(self) -> pd.DataFrame:
+        """
+        Retrieves daily precipitation by stations.
+
+        Returns:
+            Data frame with columns `station`, `date`, `amount`
+        """
         query = '''
             WITH daily AS (
                 SELECT 
@@ -59,7 +65,18 @@ class PrecipitationDB:
 
 
     def get_precipitation_dates(self) -> list[datetime.date]:
-        query = 'SELECT DISTINCT DATE(datetime) FROM hourly_precip WHERE HOUR(datetime) = 23'
+        """
+        Retrieves all dates for which data (for hour 23) are present in the database.
+
+        Returns:
+            Dates in the database sorted in ascending order.
+        """
+        query = '''
+        SELECT DISTINCT DATE(datetime) AS date
+        FROM hourly_precip 
+        WHERE HOUR(datetime) = 23
+        ORDER BY date
+        '''
         with self.get_connection() as conn:
             with conn.cursor() as cursor:
                 cursor.execute(query)
@@ -74,7 +91,6 @@ class PrecipitationDB:
         Args:
             data: precipitation data in long format
         """
-
         queries = [
             # temporary table to store data
             '''
@@ -110,6 +126,9 @@ class PrecipitationDB:
 
 
     def create_tables(self) -> None:
+        """
+        Creates empty `stations` and `hourly_precip` tables.
+        """
         table_queries = [
             """
             CREATE TABLE IF NOT EXISTS stations (
@@ -141,9 +160,16 @@ class PrecipitationDB:
 
 
     def insert_stations(self, stations: pd.DataFrame) -> None:
-        query = (f'INSERT INTO stations ({",".join(station_table_cols.keys())}) '
-                 f"VALUES ({','.join(['%s']*len(station_table_cols.keys()))})")
-        data = stations.loc[:, station_table_cols.values()].itertuples(index=False, name=None)
+        """
+        Inserts station data into `stations` table.
+
+        Args:
+            stations: station data; all values of `STATION_TABLE_COLS` should
+                be present as names in the data frame
+        """
+        query = (f'INSERT INTO stations ({",".join(STATION_TABLE_COLS.keys())}) '
+                 f"VALUES ({','.join(['%s'] * len(STATION_TABLE_COLS.keys()))})")
+        data = stations.loc[:, STATION_TABLE_COLS.values()].itertuples(index=False, name=None)
 
         logger.info(f'Inserting {stations.shape[0]} rows into `stations` table.')
         with self.get_connection() as conn:
@@ -153,7 +179,13 @@ class PrecipitationDB:
 
 
     def get_stations_data(self) -> pd.DataFrame:
-        col_names = station_table_cols.keys()
+        """
+        Reads station data from `stations` table.
+
+        Returns:
+            Station data.
+        """
+        col_names = list(STATION_TABLE_COLS.keys())
         query = f'SELECT {", ".join(col_names)} FROM stations'
         with self.get_connection() as conn:
             with conn.cursor() as cursor:

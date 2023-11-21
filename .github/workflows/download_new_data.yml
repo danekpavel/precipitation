@@ -1,0 +1,21 @@
+name: 'Download new data'
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # 03:00 every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12' 
+
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements_download.txt
+
+      - run: python save_new_data.py
