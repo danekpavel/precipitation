@@ -31,8 +31,9 @@ def save_new_data(min_offset: int = 1, max_offset: int = 7) -> None:
                 f'to be downloaded between offsets [{min_offset}, {max_offset}].')
 
     for dat in dates_new:
-        df = download_precip_date(dat, allow_today=True)
-        csv.write_precip_table(df, dat)
+        print(dat)
+        # df = download_precip_date(dat, allow_today=True)
+        # csv.write_precip_table(df, dat)
 
 
 if __name__ == 'main':
