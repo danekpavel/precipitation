@@ -6,8 +6,13 @@ on:
     - cron: '0 3 * * *'  # 03:00 every day
 
 jobs:
-  build:
+  download:
     runs-on: ubuntu-latest
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
+      contents: write
+      
     steps:
       - uses: actions/checkout@v4 
 
@@ -21,13 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements_download.txt
 
-      - name: Run script, commit
+      - name: Run script
         run: python save_new_data.py
 
-      - name: Commit
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "new data downloaded"
-          git push
+      - name: Autocommit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Download new files
