@@ -20,6 +20,8 @@ def save_new_data(min_offset: int = 1, max_offset: int = 7) -> None:
         max_offset: the oldest day to download
     """
     dates_csv = csv.get_csv_dates()
+    print(1)
+    print(dates_csv)
     # offset-specified dates in ISO format
     dates_recent = [(date.today() - timedelta(days=d)).isoformat()
                     for d in range(min_offset, max_offset + 1)]
