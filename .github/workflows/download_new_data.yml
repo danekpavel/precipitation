@@ -26,10 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements_download.txt
 
-      - name: Run script
-        run: python save_new_data.py
+      - name: Run script 
+        run: python -m scripts.save_new_data  # run as a module
 
       - name: Autocommit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Download new files
+          commit_message: Download new data

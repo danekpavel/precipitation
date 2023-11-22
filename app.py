@@ -10,13 +10,11 @@ import json
 from datetime import datetime, timedelta
 import locale
 from functools import cmp_to_key
-import logging
 from typing import Iterable
 
 RadioOptionsType = list[dict[str, str | bool]]
 
-logging_config.config()
-logger = logging.getLogger(__name__)
+logger = logging_config.get_local_logger(__name__)
 
 locale.setlocale(locale.LC_ALL, 'cs_CZ')
 
@@ -512,15 +510,16 @@ def draw_station_plots(displayed: str,
     date_display_range = pd.date_range(
         date_range[0] + timedelta(days=slider[0]),
         date_range[0] + timedelta(days=slider[1]))
+    # copy() at the end needed so that a SettingWithCopyWarning is not issued later on
     df = daily_data.loc[
         daily_data.index.get_level_values('station_idx').isin(displayed.keys()) &
-        daily_data.index.get_level_values('date_idx').isin(date_display_range)]
+        daily_data.index.get_level_values('date_idx').isin(date_display_range)].copy()
 
     # Build scatterplot
     scatter = go.Figure()
 
     # markers for values of 0 will not be shown
-    df['m_size'] = [0 if a == 0 else 7 for a in df['amount']]
+    df.loc[:, 'm_size'] = [0 if a == 0 else 7 for a in df['amount']]
 
     stations = sorted_locale(displayed.keys())
 

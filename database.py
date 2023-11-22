@@ -1,11 +1,12 @@
+import logging_config
+
 from datetime import datetime
 import pandas as pd
-import logging
 from mysql.connector import connect
 from contextlib import contextmanager
 from typing import Generator
 
-logger = logging.getLogger(__name__)
+logger = logging_config.get_local_logger(__name__)
 
 # station data column name translation from DB names (keys) to CSV names (values)
 STATION_TABLE_COLS = {

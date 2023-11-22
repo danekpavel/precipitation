@@ -11,13 +11,11 @@ import pandas as pd
 import glob
 import re
 from typing import Generator
-import logging
 
 # CSV files location
 CSV_DIR = 'data/daily'
 
-logging_config.config()
-logger = logging.getLogger(__name__)
+logger = logging_config.get_local_logger(__name__)
 
 
 def precip_table_to_long(df: pd.DataFrame, date: str) -> pd.DataFrame:

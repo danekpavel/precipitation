@@ -3,11 +3,8 @@ import data_csv as csv
 import logging_config
 
 from datetime import date, timedelta
-import logging
 
-
-logging_config.config()
-logger = logging.getLogger(__name__)
+logger = logging_config.get_download_logger(__name__)
 
 
 def save_new_data(min_offset: int = 1, max_offset: int = 7) -> None:

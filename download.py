@@ -12,10 +12,8 @@ import re
 import time
 from datetime import date, datetime
 import pandas as pd
-import logging
 
-logging_config.config()
-logger = logging.getLogger(__name__)
+logger = logging_config.get_download_logger(__name__)
 
 
 def extract_n_date(page: BeautifulSoup) -> tuple[int, datetime]:

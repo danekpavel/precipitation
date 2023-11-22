@@ -6,15 +6,13 @@ data retrieved from the database.
 from utils import *
 import database
 import data_csv as csv
+import logging_config
 import credentials
 
 import pandas as pd
-import logging
-import logging_config
 
 
-logging_config.config()
-logger = logging.getLogger(__name__)
+logger = logging_config.get_local_logger(__name__)
 
 db = database.PrecipitationDB(
     host=credentials.DB_HOST,
