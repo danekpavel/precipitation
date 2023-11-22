@@ -1,11 +1,13 @@
 /.idea
 __pycache__
 
-logs.txt
+logs_local.txt
 credentials.py
 
 # old long format data
 /data/old-long
+# favicon source data
+/data/raindrop
 
 # Vim swap files
 *.swp
