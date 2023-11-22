@@ -6,9 +6,9 @@ data retrieved from the database.
 from utils import *
 import database
 import data_csv as csv
+import credentials
 
 import pandas as pd
-from os import environ
 import logging
 import logging_config
 
@@ -17,10 +17,10 @@ logging_config.config()
 logger = logging.getLogger(__name__)
 
 db = database.PrecipitationDB(
-    host=environ['DB_HOST'],
-    user=environ['DB_USER'],
-    password=environ['DB_PASSWORD'],
-    database=environ['DB_DATABASE'])
+    host=credentials.DB_HOST,
+    user=credentials.DB_USER,
+    password=credentials.DB_PASSWORD,
+    database=credentials.DB_DATABASE)
 
 
 def fill_stations_table() -> None:

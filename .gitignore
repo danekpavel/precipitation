@@ -2,6 +2,7 @@
 /__pycache__
 
 logs.txt
+credentials.py
 
 # old long format data
 /data/old-long
