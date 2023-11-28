@@ -127,6 +127,9 @@ def get_station_name_translator() -> TranslatorType:
     return lambda names: [d[n] for n in names]
 
 
+def get_max_db_date() -> datetime.date:
+    return db.get_max_date()
+
 # db.create_tables()
 # fill_stations_table()
 
