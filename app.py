@@ -677,4 +677,4 @@ def map_station_clicked(click_map, selected):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
