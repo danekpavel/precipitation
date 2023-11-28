@@ -196,6 +196,24 @@ class PrecipitationDB:
         df = pd.DataFrame(res, columns=col_names)
         return df
 
+
+    def get_max_date(self) -> datetime.date:
+        """
+        Retrieves maximum date in the database.
+
+        Returns:
+            Maximum date
+        """
+        query = '''
+        SELECT MAX(DATE(datetime)) AS date
+        FROM hourly_precip 
+        '''
+        with self.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(query)
+                res = cursor.fetchone()
+        return res[0]
+
     #region Pool implementation
     '''
     def __init__(self, host, user, password, database,
