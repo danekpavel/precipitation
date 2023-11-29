@@ -1,7 +1,10 @@
+import dash.development.base_component
+
 import data_db_csv
 import logging_config
 
-from dash import Dash, dcc, html, callback, Input, State, Output, ctx
+from dash import Dash, dcc, html, callback, Input, State, Output, ctx, no_update
+from dash.development.base_component import Component
 from dash.exceptions import PreventUpdate
 import plotly.graph_objects as go
 import plotly.io as pio
@@ -11,6 +14,7 @@ from datetime import datetime, timedelta, time, timezone
 import locale
 from functools import cmp_to_key
 from typing import Iterable
+
 
 RadioOptionsType = list[dict[str, str | bool]]
 
@@ -24,6 +28,14 @@ try:
     day_of_month_code = '%#d'
 except ValueError:
     day_of_month_code = '%-d'
+
+TRACE_COLORS = [
+    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2',
+    '#7f7f7f', '#bcbd22', '#17becf', '#9edae5', '#c5b0d5', '#ff9896', '#c49c94',
+    '#f7b6d2', '#aec7e8', '#ffbb78', '#98df8a']
+DATE_PICKER_FORMAT = 'Y-MM-DD'
+# color scale for topography
+TOPO_COLORSCALE = [(0, '#3c855e'), (.4, '#ffd39e'), (1, '#88594d')]
 
 
 def sorted_locale(x: Iterable[str]) -> list[str]:
@@ -132,111 +144,130 @@ def try_data_update():
     else:
         next_data_update_time = datetime.now(timezone.utc) + timedelta(minutes=30)
 
+    next_data_update_time = datetime.now(timezone.utc) + timedelta(seconds=1)
 
-trace_colors = colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2',
-    '#7f7f7f', '#bcbd22', '#17becf', '#9edae5', '#c5b0d5', '#ff9896', '#c49c94',
-    '#f7b6d2', '#aec7e8', '#ffbb78', '#98df8a']
-date_picker_format = 'Y-MM-DD'
-# color scale for topography
-topo_colorscale = [(0, '#3c855e'), (.4, '#ffd39e'), (1, '#88594d')]
 
-station_names_translator = data_db_csv.get_station_name_translator()
+def serve_layout() -> Component:
+    """
+    Creates app layout so that it is up-to-date with current data.
 
-# stations data
-stations_data = data_db_csv.get_stations_data(station_names_translator)
-# sorted station names for the dropdown menu
-stations_list = sorted_locale(stations_data['name'])
-
-daily_data = None
-d0 = datetime.fromtimestamp(0, timezone.utc)
-date_range = (d0, d0)
-next_data_update_time = d0
-UPDATE_TIME = time(3, 40)
-
-try_data_update()
-sl_len = (date_range[1] - date_range[0]).days + 1
-
-#region Scattermapbox definition
-fig_map = go.Figure()
-
-# data shared by both Scattermapbox traces
-station_markers = dict(
-    lat=stations_data['lat'],
-    lon=stations_data['lon'],
-    mode='markers',
-    showlegend=False
-)
-
-# bottom markers layer -- selected stations
-fig_map.add_trace(
-    go.Scattermapbox(
-        name="selected_stations",
-        lat=[],
-        lon=[],
-        marker=dict(
-            size=40
-        ),
-        showlegend=False
-    )
-)
-
-# middle markers layer -- inner marker border
-fig_map.add_trace(
-    go.Scattermapbox(
-        **station_markers,
-        marker=dict(
-            size=20,
-            color='white'
-        )
-    )
-)
-
-# upper markers layer -- inside color
-fig_map.add_trace(
-    go.Scattermapbox(
-        **station_markers,
-        marker=dict(
-            size=16,
-            color=stations_data['elevation'],
-            showscale=True,
-            colorscale=topo_colorscale,
-            cmin=20,
-            cmax=1603,
-            colorbar=dict(
-                title="Nadmořská<br>výška (m)",
-                lenmode="pixels", len=200,
-                xanchor='left', x=0,
-                yanchor="bottom", y=0,
-                bgcolor='rgba(255, 255, 255, .7)'
+    Returns:
+        App layout
+    """
+    slider_len = (date_range[1] - date_range[0]).days + 1
+    layout = html.Div([
+        html.Div([  # left-side container
+            html.Div([  # map
+                dcc.Graph(
+                    id='map',
+                    figure=fig_map,
+                    style={'height': '100%'}
+                )],
+                style={'position': 'absolute',
+                       'width': '100%',
+                       'height': '100%'}
+            ),
+            html.Div([  # stations dropdown
+                dcc.Dropdown(
+                    id='dropdown-stations',
+                    options=stations_list,
+                    multi=True,
+                    value=[],
+                    placeholder='Vyberte stanice zde nebo kliknutím v mapě',
+                    style={'marginBottom': '5px'}
+                )],
+                style={'position': 'absolute',
+                       'width': '100%'}
+            )],
+            id='left-pane'),
+        html.Div([  # right-side container
+            html.Div([  # date slider and pickers
+                html.Div([
+                    dcc.DatePickerSingle(
+                        id='date-picker-from',
+                        min_date_allowed=date_range[0],
+                        max_date_allowed=date_range[1],
+                        date=date_range[0],
+                        display_format=DATE_PICKER_FORMAT
+                    )
+                ]),
+                html.Div([
+                    dcc.RangeSlider(
+                        id='date-slider',
+                        min=0,
+                        max=slider_len,
+                        step=1,
+                        value=[0, slider_len],
+                        marks=None
+                    )],
+                    style={'width': '93%',
+                           'marginTop': '8px'}
+                ),
+                html.Div([
+                    dcc.DatePickerSingle(
+                        id='date-picker-to',
+                        min_date_allowed=date_range[0],
+                        max_date_allowed=date_range[1],
+                        date=date_range[1],
+                        display_format=DATE_PICKER_FORMAT
+                    )],
+                )],
+                style={'display': 'flex',
+                       'justifyContent': 'space-between'}
+            ),
+            html.H2('Denní úhrn srážek (mm)'),
+            html.Div([
+                dcc.Graph(
+                    id='scatterplot',
+                    figure=blank_fig(),
+                    config=dict(locale='cs',
+                                displayModeBar=False),
+                    style={'height': '100%'}
+                )],
+                style={'flex': 1}
+            ),
+            html.H2('Sumarizace za vybrané období'),
+            html.Div([
+                dcc.RadioItems(create_radio_options(disabled=True),
+                               value='sum',
+                               id='summary-radios',
+                               inline=True,
+                               labelStyle={'marginLeft': '20px',
+                                           'fontSize': 'small'})
+            ],
+                style={'display': 'flex',
+                       'justifyContent': 'flex-end'}
+            ),
+            html.Div([
+                dcc.Graph(
+                    id='barplot',
+                    figure=blank_fig(),
+                    config=dict(locale='cs',
+                                displayModeBar=False),
+                    style={'height': '100%'}
+                )],
+                style={'flex': 1}
             )
+        ],
+            id='right-pane'
         ),
-        hovertemplate='<b>%{customdata[0]}</b><br>'
-                      '%{customdata[1]} m n. m.<extra></extra>',
-        customdata=stations_data.loc[:,
-                   ['name', 'elevation', 'type']]
+        # list of available colors
+        dcc.Store(
+            id='colors-available',
+            data=json.dumps(TRACE_COLORS)),
+        # dictionary of already used colors with station names as keys
+        dcc.Store(
+            id='colors-displayed',
+            data='{}'),
+        # last date covered by data
+        dcc.Store(
+            id='data-last-date',
+            data=date_range[1].isoformat()
+        )
+    ],
+        id='main'
     )
-)
-
-fig_map.update_layout(
-    mapbox=dict(
-        style='open-street-map',
-        center=dict(
-            lat=stations_data['lat'].mean(),
-            lon=stations_data['lon'].mean()
-        ),
-        zoom=6.5
-    ),
-    margin=dict(r=0, t=0, l=0, b=0),
-    coloraxis_colorbar=dict(
-        title="Elevation (m)",
-        xanchor='left', x=.5,
-        yanchor="bottom", y=.5,
-        bgcolor='rgba(255, 255, 255, .7)'
-    ),
-    autosize=True,
-)
-#endregion
+    return layout
 
 
 def blank_fig(text: str = '<i>vyberte stanici</i>') -> go.Figure:
@@ -283,124 +314,107 @@ def create_radio_options(disabled: bool = False) -> RadioOptionsType:
     ]
 
 
+station_names_translator = data_db_csv.get_station_name_translator()
+
+# stations data
+stations_data = data_db_csv.get_stations_data(station_names_translator)
+# sorted station names for the dropdown menu
+stations_list = sorted_locale(stations_data['name'])
+
+# "declare" variables used as global in data updating functions
+daily_data = None
+d0 = datetime.fromtimestamp(0, timezone.utc)
+date_range = (d0, d0)
+next_data_update_time = d0
+UPDATE_TIME = time(3, 40)
+# set values to the above variables
+try_data_update()
+
+#region Scattermapbox definition
+fig_map = go.Figure()
+
+# data shared by both Scattermapbox traces
+station_markers = dict(
+    lat=stations_data['lat'],
+    lon=stations_data['lon'],
+    mode='markers',
+    showlegend=False
+)
+
+# bottom markers layer -- selected stations
+fig_map.add_trace(
+    go.Scattermapbox(
+        name="selected_stations",
+        lat=[],
+        lon=[],
+        marker=dict(
+            size=40
+        ),
+        showlegend=False
+    )
+)
+
+# middle markers layer -- inner marker border
+fig_map.add_trace(
+    go.Scattermapbox(
+        **station_markers,
+        marker=dict(
+            size=20,
+            color='white'
+        )
+    )
+)
+
+# upper markers layer -- inside color
+fig_map.add_trace(
+    go.Scattermapbox(
+        **station_markers,
+        marker=dict(
+            size=16,
+            color=stations_data['elevation'],
+            showscale=True,
+            colorscale=TOPO_COLORSCALE,
+            cmin=20,
+            cmax=1603,
+            colorbar=dict(
+                title="Nadmořská<br>výška (m)",
+                lenmode="pixels", len=200,
+                xanchor='left', x=0,
+                yanchor="bottom", y=0,
+                bgcolor='rgba(255, 255, 255, .7)'
+            )
+        ),
+        hovertemplate='<b>%{customdata[0]}</b><br>'
+                      '%{customdata[1]} m n. m.<extra></extra>',
+        customdata=stations_data.loc[:,
+                   ['name', 'elevation', 'type']]
+    )
+)
+
+fig_map.update_layout(
+    mapbox=dict(
+        style='open-street-map',
+        center=dict(
+            lat=stations_data['lat'].mean(),
+            lon=stations_data['lon'].mean()
+        ),
+        zoom=6.5
+    ),
+    margin=dict(r=0, t=0, l=0, b=0),
+    coloraxis_colorbar=dict(
+        title="Elevation (m)",
+        xanchor='left', x=.5,
+        yanchor="bottom", y=.5,
+        bgcolor='rgba(255, 255, 255, .7)'
+    ),
+    autosize=True,
+)
+#endregion
+
 pio.templates.default = 'plotly_white'
 app = Dash(__name__)
 app.title = 'Srážky v ČR'
-
-app.layout = html.Div([
-    html.Div([  # left-side container
-        html.Div([  # map
-            dcc.Graph(
-                id='map',
-                figure=fig_map,
-                style={'height': '100%'}
-            )],
-            style={'position': 'absolute',
-                   'width': '100%',
-                   'height': '100%'}
-        ),
-        html.Div([  # stations dropdown
-            dcc.Dropdown(
-                id='dropdown-stations',
-                options=stations_list,
-                multi=True,
-                value=[],
-                placeholder='Vyberte stanice zde nebo kliknutím v mapě',
-                style={'marginBottom': '5px'}
-            )],
-            style={'position': 'absolute',
-                   'width': '100%'}
-        )],
-        id='left-pane'),
-    html.Div([  # right-side container
-        html.Div([  # date slider and pickers
-            html.Div([
-                dcc.DatePickerSingle(
-                    id='date-picker-from',
-                    min_date_allowed=date_range[0],
-                    max_date_allowed=date_range[1],
-                    date=date_range[0],
-                    display_format=date_picker_format
-                )
-            ]),
-            html.Div([
-                dcc.RangeSlider(
-                    id='date-slider',
-                    min=0,
-                    max=sl_len,
-                    step=1,
-                    value=[0, sl_len],
-                    marks=None
-                )],
-                style={'width': '93%',
-                       'marginTop': '8px'}
-            ),
-            html.Div([
-                dcc.DatePickerSingle(
-                    id='date-picker-to',
-                    min_date_allowed=date_range[0],
-                    max_date_allowed=date_range[1],
-                    date=date_range[1],
-                    display_format=date_picker_format
-                )],
-            )],
-            style={'display': 'flex',
-                   'justifyContent': 'space-between'}
-        ),
-        html.H2('Denní úhrn srážek (mm)'),
-        html.Div([
-            dcc.Graph(
-                id='scatterplot',
-                figure=blank_fig(),
-                config=dict(locale='cs',
-                            displayModeBar=False),
-                style={'height': '100%'}
-            )],
-            style={'flex': 1}
-        ),
-        html.H2('Sumarizace za vybrané období'),
-        html.Div([
-            dcc.RadioItems(create_radio_options(disabled=True),
-                value='sum',
-                id='summary-radios',
-                inline=True,
-                labelStyle={'marginLeft': '20px',
-                            'fontSize': 'small'})
-            ],
-            style={'display': 'flex',
-                   'justifyContent': 'flex-end'}
-        ),
-        html.Div([
-            dcc.Graph(
-                id='barplot',
-                figure=blank_fig(),
-                config=dict(locale='cs',
-                            displayModeBar=False),
-                style={'height': '100%'}
-            )],
-            style={'flex': 1}
-        )
-    ],
-        id='right-pane'
-        ),
-    # list of available colors
-    dcc.Store(
-        id='colors-available',
-        data=json.dumps(trace_colors)),
-    # dictionary of already used colors with station names as keys
-    dcc.Store(
-        id='colors-displayed',
-        data='{}'),
-    # last date covered by data
-    dcc.Store(
-        id='data-last-date',
-        data=date_range[1].isoformat()
-    )
-],
-    id='main'
-)
-
-# return new Date().toUTCString()
+app.layout = serve_layout
 
 
 @callback(
@@ -572,6 +586,7 @@ def draw_station_plots(displayed: str,
             last date
     """
     displayed = json.loads(displayed)
+    stations = sorted_locale(displayed.keys())
 
     # try to update daily data when it is time to do so
     if datetime.now(timezone.utc) > next_data_update_time:
@@ -590,41 +605,44 @@ def draw_station_plots(displayed: str,
         daily_data.index.get_level_values('station_idx').isin(displayed.keys()) &
         daily_data.index.get_level_values('date_idx').isin(date_display_range)].copy()
 
-    # Build scatterplot
-    scatter = go.Figure()
+    # don't redraw the scatterplot when just changing summary function
+    if ctx.triggered_id == 'summary-radios':
+        scatter = no_update
+    else:
+        scatter = go.Figure()
 
-    # markers for values of 0 will not be shown
-    df.loc[:, 'm_size'] = [0 if a == 0 else 7 for a in df['amount']]
+        # markers for values of 0 will not be shown
+        df.loc[:, 'm_size'] = [0 if a == 0 else 7 for a in df['amount']]
 
-    stations = sorted_locale(displayed.keys())
+        # add a line and marker traces for each station
+        for station in stations:
+            df_station = df.loc[df.index.get_level_values('station_idx') == station]
+            fig_data = dict(
+                x=df_station['date'],
+                y=df_station['amount'])
+            # lines
+            scatter.add_trace(go.Scatter(
+                **fig_data,
+                mode='lines',
+                name=station,
+                line=dict(
+                    color=displayed[station]
+                )))
+            # markers
+            scatter.add_trace(go.Scatter(**fig_data,
+                mode='markers',
+                marker=dict(
+                    size=df_station['m_size'],
+                    color=displayed[station]
+                ),
+                name=station,
+                hovertemplate='%{y} mm<br>'
+                              '%{x|%-d. %m. %Y}',
+                showlegend=False))
+        scatter.update_xaxes(tickformat='%-d. %b\n%Y')  # unlike Windows, Dash uses '%-d'
+        scatter.update_layout(margin=dict(l=50, r=50, b=50, t=0))
 
-    # add a line and marker traces for each station
-    for station in stations:
-        df_station = df.loc[df.index.get_level_values('station_idx') == station]
-        fig_data = dict(
-            x=df_station['date'],
-            y=df_station['amount'])
-        # lines
-        scatter.add_trace(go.Scatter(
-            **fig_data,
-            mode='lines',
-            name=station,
-            line=dict(
-                color=displayed[station]
-            )))
-        # markers
-        scatter.add_trace(go.Scatter(**fig_data,
-            mode='markers',
-            marker=dict(
-                size=df_station['m_size'],
-                color=displayed[station]
-            ),
-            showlegend=False))
-    scatter.update_xaxes(tickformat='%-d. %b\n%Y')  # unlike Windows, Dash uses '%-d'
-    scatter.update_layout(margin=dict(l=50, r=50, b=50, t=0))
-
-    # Build barplot
-
+    # create the barplot
     agg = df.groupby('station', observed=True, as_index=True).agg({'amount': agg_fun})
     agg = agg.loc[stations]
     agg.reset_index(inplace=True)
