@@ -3,7 +3,7 @@ name: 'Download new data'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'  # 03:00 every day
+    - cron: '0 2 * * *'  # 02:00 every day
 
 jobs:
   download:
