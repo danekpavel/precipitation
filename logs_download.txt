@@ -1204,3 +1204,6 @@
 2024-12-28 02:47:40 INFO     [save_new_data/save_new_data.py:27] Precipitation data for 1 new dates (2024-12-27) to be downloaded between offsets [1, 7].
 2024-12-28 02:47:40 INFO     [download/download.py:55] Starting to download first page for day offset 1
 2024-12-28 02:47:42 INFO     [download/download.py:59] 10 total pages to be downloaded for 2024-12-27
+2024-12-29 02:57:07 INFO     [save_new_data/save_new_data.py:27] Precipitation data for 1 new dates (2024-12-28) to be downloaded between offsets [1, 7].
+2024-12-29 02:57:07 INFO     [download/download.py:55] Starting to download first page for day offset 1
+2024-12-29 02:57:08 INFO     [download/download.py:59] 10 total pages to be downloaded for 2024-12-28
