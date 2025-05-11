@@ -1603,3 +1603,6 @@
 2025-05-10 03:06:31 INFO     [save_new_data/save_new_data.py:27] Precipitation data for 1 new dates (2025-05-09) to be downloaded between offsets [1, 7].
 2025-05-10 03:06:31 INFO     [download/download.py:55] Starting to download first page for day offset 1
 2025-05-10 03:06:33 INFO     [download/download.py:59] 10 total pages to be downloaded for 2025-05-09
+2025-05-11 03:16:28 INFO     [save_new_data/save_new_data.py:27] Precipitation data for 1 new dates (2025-05-10) to be downloaded between offsets [1, 7].
+2025-05-11 03:16:28 INFO     [download/download.py:55] Starting to download first page for day offset 1
+2025-05-11 03:16:29 INFO     [download/download.py:59] 10 total pages to be downloaded for 2025-05-10
